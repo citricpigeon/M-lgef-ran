@@ -1,5 +1,6 @@
 [
   {
+    "kind": "shift",
     "summary": "Picture House shift – Bar",
     "start": "2026-09-04T12:00:00",
     "end": "2026-09-04T21:00:00",
@@ -8,6 +9,7 @@
     "description": "You: 12:00–21:00 (9h 00m) · week total 41h 00m\n\nAdded by rota-calendar."
   },
   {
+    "kind": "shift",
     "summary": "Picture House shift – Bar",
     "start": "2026-09-05T12:00:00",
     "end": "2026-09-05T21:00:00",
@@ -16,6 +18,7 @@
     "description": "You: 12:00–21:00 (9h 00m) · week total 41h 00m\nYour task: name, faded, on, print\n\nAdded by rota-calendar."
   },
   {
+    "kind": "shift",
     "summary": "Picture House shift – Bar",
     "start": "2026-09-06T08:30:00",
     "end": "2026-09-06T14:30:00",
@@ -24,6 +27,25 @@
     "description": "You: 08:30–14:30 (6h 00m) · week total 41h 00m\nYour task: SR – stock rotate\n\nAdded by rota-calendar."
   },
   {
+    "kind": "meeting",
+    "summary": "Staff meeting (attend one)",
+    "start": "2026-09-06T09:00:00",
+    "end": "2026-09-06T10:00:00",
+    "colorId": "11",
+    "location": "",
+    "description": "From the rota.\nThe rota lists more than one session. You only need to attend one.\nListed under Sun and Mon at the same time; assumed to be two sessions of one meeting.\n\nAdded by rota-calendar."
+  },
+  {
+    "kind": "meeting",
+    "summary": "Staff meeting (attend one)",
+    "start": "2026-09-07T09:00:00",
+    "end": "2026-09-07T10:00:00",
+    "colorId": "11",
+    "location": "",
+    "description": "From the rota.\nThe rota lists more than one session. You only need to attend one.\nListed under Sun and Mon at the same time; assumed to be two sessions of one meeting.\n\nAdded by rota-calendar."
+  },
+  {
+    "kind": "shift",
     "summary": "Picture House shift – Bar",
     "start": "2026-09-07T12:00:00",
     "end": "2026-09-07T20:30:00",
@@ -32,6 +54,7 @@
     "description": "You: 12:00–20:30 (8h 30m) · week total 41h 00m\n\nAdded by rota-calendar."
   },
   {
+    "kind": "shift",
     "summary": "Picture House shift – Bar",
     "start": "2026-09-08T12:00:00",
     "end": "2026-09-08T20:30:00",

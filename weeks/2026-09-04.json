@@ -2,10 +2,55 @@
   "week_commencing": "2026-09-04",
   "source": "Drive IMG_5078.DNG (no month printed; Fri 4 + current staff list fits Sep 2026)",
   "shifts": [
-    {"date": "2026-09-04", "start": "12:00", "end": "21:00", "role": "Bar"},
-    {"date": "2026-09-05", "start": "12:00", "end": "21:00", "role": "Bar", "note": "name faded on print"},
-    {"date": "2026-09-06", "start": "08:30", "end": "14:30", "role": "Bar", "note": "SR"},
-    {"date": "2026-09-07", "start": "12:00", "end": "20:30", "role": "Bar"},
-    {"date": "2026-09-08", "start": "12:00", "end": "20:30", "role": "Bar"}
+    {
+      "date": "2026-09-04",
+      "start": "12:00",
+      "end": "21:00",
+      "role": "Bar"
+    },
+    {
+      "date": "2026-09-05",
+      "start": "12:00",
+      "end": "21:00",
+      "role": "Bar",
+      "note": "name faded on print"
+    },
+    {
+      "date": "2026-09-06",
+      "start": "08:30",
+      "end": "14:30",
+      "role": "Bar",
+      "note": "SR"
+    },
+    {
+      "date": "2026-09-07",
+      "start": "12:00",
+      "end": "20:30",
+      "role": "Bar"
+    },
+    {
+      "date": "2026-09-08",
+      "start": "12:00",
+      "end": "20:30",
+      "role": "Bar"
+    }
+  ],
+  "meetings": [
+    {
+      "date": "2026-09-06",
+      "start": "09:00",
+      "end": "10:00",
+      "title": "Staff meeting",
+      "choose_one": true,
+      "note": "Listed under Sun and Mon at the same time; assumed to be two sessions of one meeting."
+    },
+    {
+      "date": "2026-09-07",
+      "start": "09:00",
+      "end": "10:00",
+      "title": "Staff meeting",
+      "choose_one": true,
+      "note": "Listed under Sun and Mon at the same time; assumed to be two sessions of one meeting."
+    }
   ]
 }

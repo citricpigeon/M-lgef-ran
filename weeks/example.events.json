@@ -1,26 +1,38 @@
 [
   {
-    "summary": "Picture House shift – Floor",
-    "start": "2026-11-09T10:00:00",
-    "end": "2026-11-09T16:30:00",
-    "colorId": "3",
-    "location": "",
-    "description": "You: 10:00–16:30 (6h 30m) · week total 21h 00m\n\nAdded by rota-calendar."
-  },
-  {
+    "kind": "shift",
     "summary": "Picture House shift – Bar",
-    "start": "2026-11-11T17:45:00",
-    "end": "2026-11-12T00:15:00",
+    "start": "2026-11-13T10:30:00",
+    "end": "2026-11-13T18:00:00",
     "colorId": "3",
     "location": "",
-    "description": "You: 17:45–00:15 (6h 30m) · week total 21h 00m\n\nAdded by rota-calendar."
+    "description": "You: 10:30–18:00 (7h 30m) · week total 21h 00m\nThen: Box 18:00–23:00\nDay total: 12h 30m\n\nDM: Jack 08:30–16:30 → Lila 16:00–23:00\n\nOPENING bar (start 08:00–10:30)\n• Richard 08:30–16:30 (DC – deep clean)\n• Gracie 10:30–18:30 (then Box 18:30–22:00)\n\nCLOSING bar (start 14:00 or later)\n• Kieran 16:00–23:00 (ST – meaning not known yet)\n\nAdded by rota-calendar."
   },
   {
-    "summary": "Picture House shift – Box office",
-    "start": "2026-11-14T12:00:00",
-    "end": "2026-11-14T20:00:00",
+    "kind": "shift",
+    "summary": "Picture House shift – Box",
+    "start": "2026-11-13T18:00:00",
+    "end": "2026-11-13T23:00:00",
     "colorId": "3",
     "location": "",
-    "description": "You: 12:00–20:00 (8h 00m) · week total 21h 00m\n\nAdded by rota-calendar."
+    "description": "You: 18:00–23:00 (5h 00m) · week total 21h 00m\nBefore this: Bar 10:30–18:00\nDay total: 12h 30m\n\nAdded by rota-calendar."
+  },
+  {
+    "kind": "meeting",
+    "summary": "Staff meeting",
+    "start": "2026-11-15T09:00:00",
+    "end": "2026-11-15T10:00:00",
+    "colorId": "11",
+    "location": "",
+    "description": "From the rota.\n\nAdded by rota-calendar."
+  },
+  {
+    "kind": "shift",
+    "summary": "Picture House shift – Bar",
+    "start": "2026-11-15T12:00:00",
+    "end": "2026-11-15T20:30:00",
+    "colorId": "3",
+    "location": "",
+    "description": "You: 12:00–20:30 (8h 30m) · week total 21h 00m\nThen: somewhere else after this. Not found on the rota, so check the sheet.\n\nAdded by rota-calendar."
   }
 ]

@@ -1,8 +1,71 @@
 {
-  "week_commencing": "2026-11-09",
+  "week_commencing": "2026-11-13",
+  "source": "Made-up test week for '+' shifts and meetings",
   "shifts": [
-    {"date": "2026-11-09", "start": "10:00", "end": "16:30", "role": "Floor"},
-    {"date": "2026-11-11", "start": "17:45", "end": "00:15", "role": "Bar"},
-    {"date": "2026-11-14", "start": "12:00", "end": "20:00", "role": "Box office"}
+    {
+      "date": "2026-11-13",
+      "start": "10:30",
+      "end": "18:00",
+      "role": "Bar",
+      "note": "+",
+      "dm": [
+        {
+          "name": "Jack",
+          "start": "08:30",
+          "end": "16:30"
+        },
+        {
+          "name": "Lila",
+          "start": "16:00",
+          "end": "23:00"
+        }
+      ],
+      "team": [
+        {
+          "name": "Gracie",
+          "start": "10:30",
+          "end": "18:30",
+          "note": "+",
+          "then": {
+            "section": "Box",
+            "start": "18:30",
+            "end": "22:00"
+          }
+        },
+        {
+          "name": "Richard",
+          "start": "08:30",
+          "end": "16:30",
+          "note": "DC"
+        },
+        {
+          "name": "Kieran",
+          "start": "16:00",
+          "end": "23:00",
+          "note": "ST"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-13",
+      "start": "18:00",
+      "end": "23:00",
+      "role": "Box"
+    },
+    {
+      "date": "2026-11-15",
+      "start": "12:00",
+      "end": "20:30",
+      "role": "Bar",
+      "note": "+"
+    }
+  ],
+  "meetings": [
+    {
+      "date": "2026-11-15",
+      "start": "09:00",
+      "end": "10:00",
+      "title": "Staff meeting"
+    }
   ]
 }

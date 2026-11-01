@@ -1,5 +1,6 @@
 [
   {
+    "kind": "shift",
     "summary": "Picture House shift – Bar",
     "start": "2026-08-28T10:00:00",
     "end": "2026-08-28T15:00:00",
@@ -8,6 +9,7 @@
     "description": "You: 10:00–15:00 (5h 00m) · week total 39h 00m\n\nAdded by rota-calendar."
   },
   {
+    "kind": "shift",
     "summary": "Picture House shift – Bar",
     "start": "2026-08-29T10:30:00",
     "end": "2026-08-29T19:00:00",
@@ -16,6 +18,7 @@
     "description": "You: 10:30–19:00 (8h 30m) · week total 39h 00m\n\nAdded by rota-calendar."
   },
   {
+    "kind": "shift",
     "summary": "Picture House shift – Bar",
     "start": "2026-09-01T12:00:00",
     "end": "2026-09-01T20:30:00",
@@ -24,6 +27,7 @@
     "description": "You: 12:00–20:30 (8h 30m) · week total 39h 00m\n\nAdded by rota-calendar."
   },
   {
+    "kind": "shift",
     "summary": "Picture House shift – Bar",
     "start": "2026-09-02T12:00:00",
     "end": "2026-09-02T20:30:00",
@@ -32,6 +36,7 @@
     "description": "You: 12:00–20:30 (8h 30m) · week total 39h 00m\n\nAdded by rota-calendar."
   },
   {
+    "kind": "shift",
     "summary": "Picture House shift – Bar",
     "start": "2026-09-03T12:00:00",
     "end": "2026-09-03T20:30:00",

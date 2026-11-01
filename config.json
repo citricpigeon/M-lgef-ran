@@ -8,9 +8,15 @@
   "google_color_id": "3",
   "opening_start_range": ["08:00", "10:30"],
   "closing_start_from": "14:00",
+  "meeting_color_id": "11",
   "codes": {
     "SR": "stock rotate",
     "DC": "deep clean",
-    "BL": "beer lines"
+    "BL": "beer lines",
+    "+": "carries on in another area after this"
+  },
+  "unknown_codes": {
+    "ST": "Not known yet. Will is finding out (noted 1 Nov 2026).",
+    "&": "Not confirmed yet. Appears before evening Box/Usher times and before some names."
   }
 }

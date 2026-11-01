@@ -41,6 +41,10 @@ Write `weeks/<Friday YYYY-MM-DD>.json`:
 
 - **`team`** is everyone else in **Will's section** that day. That's normally Bar.
 - **`dm`** is that day's DM-section shifts.
+- **"+" after a time** means the person carries on in another area afterwards (for example 10:30–18:00+ on Bar, then 18:00–23:00 on Box or Usher). Find that person's other shift on the same day:
+  - **For Will:** add it as its own shift in `shifts` (with its own `role`). `rota.py` links the two and shows a day total. If you can't find the second part, keep the "+" and flag it.
+  - **For a team member:** add `"then": {"section": "Box", "start": "18:00", "end": "23:00"}` to their entry.
+- **Staff meetings** printed anywhere on the sheet go in `"meetings": [{"date", "start", "end", "title": "Staff meeting"}]`, whether or not Will is working that day. If the rota says to attend one of several sessions, add every session with `"choose_one": true`. `rota.py` makes each one a **red** event (`colorId` 11, Tomato).
 - **`note`** holds codes such as SR, DC, BL or "+". Don't change times because of a code. `rota.py` writes out known codes from `config.json` (SR = stock rotate, DC = deep clean, BL = beer lines). Unknown codes are kept as printed and flagged in the report. If Will has a code on his own shift, it shows on his event as "Your task".
 
 Then run `python3 rota.py weeks/<file>.json`. It writes `.md` (the table), `.ics` and `.events.json`.
@@ -55,11 +59,11 @@ Then run `python3 rota.py weeks/<file>.json`. It writes `.md` (the table), `.ics
 
 ## 5. Write to the calendar
 
-For each entry in `.events.json`, create the event on the primary calendar with:
+For each entry in `.events.json` (shifts and staff meetings), create the event on the primary calendar with:
 
-- `summary`: "Picture House shift – Bar"
+- `summary`: copied from the entry (for example "Picture House shift – Bar" or "Staff meeting")
 - `startTime` and `endTime`: local time, no timezone offset
-- `colorId`: "3" (Grape)
+- `colorId`: copied from the entry ("3" Grape for shifts, "11" Tomato for meetings)
 - `description`: copied exactly from `.events.json`
 - `notificationLevel`: "NONE"
 - the default reminders
