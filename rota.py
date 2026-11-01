@@ -49,6 +49,9 @@ def team_text(shift, week_total):
         else:
             mids.append(line)
     out = [f"You: {shift['start']}–{shift['end']} ({hm(shift['paid'])}) · week total {hm(week_total)}"]
+    if shift.get("dm"):
+        dms = sorted(shift["dm"], key=lambda d: d["start"])
+        out += ["", "DM: " + " → ".join(f"{d['name']} {d['start']}–{d['end']}" for d in dms)]
     if openers:
         out += ["", f"OPENING bar (start {CONFIG.get('opening_start_range', ['08:00', '10:30'])[0]}–{CONFIG.get('opening_start_range', ['08:00', '10:30'])[1]})"] + openers
     if mids:

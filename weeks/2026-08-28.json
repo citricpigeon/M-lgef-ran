@@ -1,0 +1,11 @@
+{
+  "week_commencing": "2026-08-28",
+  "source": "Drive photo 0c5e3945 (dates printed without month; Fri 28 + Mon 31 fits Aug 2026)",
+  "shifts": [
+    {"date": "2026-08-28", "start": "10:00", "end": "15:00", "role": "Bar"},
+    {"date": "2026-08-29", "start": "10:30", "end": "19:00", "role": "Bar"},
+    {"date": "2026-09-01", "start": "12:00", "end": "20:30", "role": "Bar"},
+    {"date": "2026-09-02", "start": "12:00", "end": "20:30", "role": "Bar"},
+    {"date": "2026-09-03", "start": "12:00", "end": "20:30", "role": "Bar"}
+  ]
+}

@@ -1,0 +1,45 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//rota-calendar//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:20261030T1200-rota-calendar@will
+DTSTAMP:20261101T174950Z
+DTSTART;TZID=Europe/London:20261030T120000
+DTEND;TZID=Europe/London:20261030T210000
+SUMMARY:Picture House shift - Bar
+DESCRIPTION:You: 12:00–21:00 (9h 00m) · week total 44h 30m\n\nDM: Jack 08:15–16:30 → Lila 16:00–23:00\n\nOPENING bar (start 08:00–10:30)\n• Ben 08:30–16:30\n• Jake 10:30–16:00\n• Gracie 10:30–18:30\n\nCLOSING bar (start 14:00 or later)\n• Louis 16:00–23:00\n• Lottie 16:00–23:00\n\nAdded by rota-calendar.
+END:VEVENT
+BEGIN:VEVENT
+UID:20261031T1200-rota-calendar@will
+DTSTAMP:20261101T174950Z
+DTSTART;TZID=Europe/London:20261031T120000
+DTEND;TZID=Europe/London:20261031T210000
+SUMMARY:Picture House shift - Bar
+DESCRIPTION:You: 12:00–21:00 (9h 00m) · week total 44h 30m\n\nDM: Jack 08:30–15:30 → Lila 15:00–23:00\n\nOPENING bar (start 08:00–10:30)\n• Ben 08:30–16:30\n• Olivia 08:30–15:30\n• Beth 10:15–18:00\n\nCLOSING bar (start 14:00 or later)\n• Louis 15:30–23:00\n• Giovine 16:30–23:00\n\nAdded by rota-calendar.
+END:VEVENT
+BEGIN:VEVENT
+UID:20261102T1200-rota-calendar@will
+DTSTAMP:20261101T174950Z
+DTSTART;TZID=Europe/London:20261102T120000
+DTEND;TZID=Europe/London:20261102T203000
+SUMMARY:Picture House shift - Bar
+DESCRIPTION:You: 12:00–20:30 (8h 30m) · week total 44h 30m\n\nDM: Jack 08:30–16:30 → George 16:00–22:30\n\nOPENING bar (start 08:00–10:30)\n• Richard 08:30–16:30 (DC)\n• Giovine 10:30–15:00\n• Louis 10:30–18:15\n\nCLOSING bar (start 14:00 or later)\n• Grace 15:00–22:00\n• Beth 16:30–22:00\n\nAdded by rota-calendar.
+END:VEVENT
+BEGIN:VEVENT
+UID:20261103T1200-rota-calendar@will
+DTSTAMP:20261101T174950Z
+DTSTART;TZID=Europe/London:20261103T120000
+DTEND;TZID=Europe/London:20261103T210000
+SUMMARY:Picture House shift - Bar
+DESCRIPTION:You: 12:00–21:00 (9h 00m) · week total 44h 30m\n\nDM: Jack 08:30–16:30 → George 16:00–22:45\n\nOPENING bar (start 08:00–10:30)\n• Richard 08:30–15:00 (DC)\n• Giovine 10:15–15:00\n• Myles 10:30–19:30\n\nCLOSING bar (start 14:00 or later)\n• Louis 15:00–22:00\n• Beth 15:00–22:00\n\nAdded by rota-calendar.
+END:VEVENT
+BEGIN:VEVENT
+UID:20261104T1200-rota-calendar@will
+DTSTAMP:20261101T174950Z
+DTSTART;TZID=Europe/London:20261104T120000
+DTEND;TZID=Europe/London:20261104T210000
+SUMMARY:Picture House shift - Bar
+DESCRIPTION:You: 12:00–21:00 (9h 00m) · week total 44h 30m\n\nDM: Lila 07:30–15:30 → Danny & George 15:00–23:30\n\nOPENING bar (start 08:00–10:30)\n• Lottie 08:30–16:00\n• Giovine 09:30–15:00\n• Richard 10:30–19:00\n\nCLOSING bar (start 14:00 or later)\n• Olivia 15:00–23:30\n• Gracie 16:00–23:30\n\nAdded by rota-calendar.
+END:VEVENT
+END:VCALENDAR
