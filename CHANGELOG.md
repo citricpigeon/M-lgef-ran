@@ -81,5 +81,5 @@ Updates that changed how the system works get a post on Searu (code `mg`). Quest
 
 ## U14 · Docs · 17:52
 **Asked:** Create a project folder in `C:\Projects`, write a README covering the whole flow from a Drive upload to the calendar, log every prompt as an update, and post each change to Searu.
-**Changed:** Added `README.md`, `CHANGELOG.md`, `RUNBOOK.md`, `CLAUDE.md` and `processed.json`. Created `C:\Projects\Mālgefēran`. Two ways to start a run: a scheduled check of the Drive folder twice a day, and "do my rota" on command. Searu project page and draft posts added.
+**Changed:** Added `README.md`, `CHANGELOG.md`, `RUNBOOK.md`, `CLAUDE.md` and `processed.json`. Created `C:\Projects\Mālgefēran`. Two ways to start a run: a scheduled check of the Drive folder at 08:37 and 17:37 UK time (it only writes to the calendar when every shift was read clearly), and a "do my rota" skill that confirms before writing. Searu project page `malgeferan`, draft posts mg-01 to mg-11 plus the mg-99 overview, and two new skill names: Automation and Document extraction. Commit `60ec920`.
 **Searu:** mg-11

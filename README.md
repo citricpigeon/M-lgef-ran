@@ -9,7 +9,7 @@ Every week a paper rota goes up at work. It covers every department (DM, Admin, 
 Mālgefēran does it for me:
 
 1. **I take a photo** of the rota and upload it to the Google Drive folder **"Photos of rotas for claude"**.
-2. **Claude finds the photo.** Either a scheduled check spots it (twice a day), or I ask in the Claude Project "rota reader to calander converter": *"do my rota"*.
+2. **Claude finds the photo.** Either the scheduled check spots it (08:37 and 17:37 every day) and processes it on its own, or I say *"do my rota"* and it shows me the table before writing anything.
 3. **Claude reads the whole sheet**, not just my row: every cell's day, section, printed time and name.
 4. **The code finds me and does the maths.** `rota.py` matches my name (it allows for typos like "Wiliam"), works out each shift's length and the week's total, and handles shifts that run past midnight.
 5. **It builds the outputs:**
