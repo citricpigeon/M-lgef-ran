@@ -34,13 +34,25 @@ def to_min(t):
     return int(h) * 60 + int(m)
 
 
+def explain(note):
+    """Turn rota codes into words, e.g. 'DC' -> 'DC – deep clean'. Unknown codes are kept as printed."""
+    if not note:
+        return ""
+    codes = {k.upper(): v for k, v in CONFIG.get("codes", {}).items()}
+    words = []
+    for part in note.replace(",", " ").split():
+        meaning = codes.get(part.upper())
+        words.append(f"{part.upper()} – {meaning}" if meaning else part)
+    return ", ".join(words)
+
+
 def team_text(shift, week_total):
     """Who else is on the bar that day, split into openers and closers."""
     open_from, open_to = (to_min(t) for t in CONFIG.get("opening_start_range", ["08:00", "10:30"]))
     close_from = to_min(CONFIG.get("closing_start_from", "14:00"))
     openers, closers, mids = [], [], []
     for p in sorted(shift.get("team", []), key=lambda p: p["start"]):
-        line = f"• {p['name']} {p['start']}–{p['end']}" + (f" ({p['note']})" if p.get("note") else "")
+        line = f"• {p['name']} {p['start']}–{p['end']}" + (f" ({explain(p['note'])})" if p.get("note") else "")
         start = to_min(p["start"])
         if open_from <= start <= open_to:
             openers.append(line)
@@ -49,6 +61,8 @@ def team_text(shift, week_total):
         else:
             mids.append(line)
     out = [f"You: {shift['start']}–{shift['end']} ({hm(shift['paid'])}) · week total {hm(week_total)}"]
+    if shift.get("note"):
+        out.append(f"Your task: {explain(shift['note'])}")
     if shift.get("dm"):
         dms = sorted(shift["dm"], key=lambda d: d["start"])
         out += ["", "DM: " + " → ".join(f"{d['name']} {d['start']}–{d['end']}" for d in dms)]
@@ -68,21 +82,28 @@ def hm(hours):
 
 
 def table(week, shifts):
+    # Hours are clock-on to clock-off. Break columns only appear if break rules are switched on in config.
+    breaks = bool(CONFIG.get("unpaid_break_rules"))
+    head = "| Day | Date | Start | End | Role | Hours | Task |" + (" Unpaid break | Paid hours |" if breaks else "")
     rows = [
         f"## Shifts for {CONFIG['name']} - w/c {week['week_commencing']}",
         "",
-        "| Day | Date | Start | End | Role | Length | Unpaid break | Paid hours |",
-        "|---|---|---|---|---|---|---|---|",
+        head,
+        "|" + "---|" * (head.count("|") - 1),
     ]
     for s in shifts:
         end_label = s["end"] + (" (+1)" if s["end_dt"].date() > s["start_dt"].date() else "")
-        rows.append(
+        row = (
             f"| {s['start_dt']:%a} | {s['start_dt']:%d %b} | {s['start']} | {end_label} | {s.get('role', '')} "
-            f"| {hm(s['length'])} | {s['unpaid_break_min']}m | {hm(s['paid'])} |"
+            f"| {hm(s['length'])} | {explain(s.get('note', ''))} |"
         )
+        if breaks:
+            row += f" {s['unpaid_break_min']}m | {hm(s['paid'])} |"
+        rows.append(row)
     total_len = sum(s["length"] for s in shifts)
     total_paid = sum(s["paid"] for s in shifts)
-    rows += ["", f"**{len(shifts)} shifts - {hm(total_len)} on site - {hm(total_paid)} paid**"]
+    total = f"**{len(shifts)} shifts - {hm(total_len)}**" if not breaks else f"**{len(shifts)} shifts - {hm(total_len)} on site - {hm(total_paid)} paid**"
+    rows += ["", total]
     return "\n".join(rows) + "\n"
 
 

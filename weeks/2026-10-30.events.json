@@ -21,7 +21,7 @@
     "end": "2026-11-02T20:30:00",
     "colorId": "3",
     "location": "",
-    "description": "You: 12:00–20:30 (8h 30m) · week total 44h 30m\n\nDM: Jack 08:30–16:30 → George 16:00–22:30\n\nOPENING bar (start 08:00–10:30)\n• Richard 08:30–16:30 (DC)\n• Giovine 10:30–15:00\n• Louis 10:30–18:15\n\nCLOSING bar (start 14:00 or later)\n• Grace 15:00–22:00\n• Beth 16:30–22:00\n\nAdded by rota-calendar."
+    "description": "You: 12:00–20:30 (8h 30m) · week total 44h 30m\n\nDM: Jack 08:30–16:30 → George 16:00–22:30\n\nOPENING bar (start 08:00–10:30)\n• Richard 08:30–16:30 (DC – deep clean)\n• Giovine 10:30–15:00\n• Louis 10:30–18:15\n\nCLOSING bar (start 14:00 or later)\n• Grace 15:00–22:00\n• Beth 16:30–22:00\n\nAdded by rota-calendar."
   },
   {
     "summary": "Picture House shift – Bar",
@@ -29,7 +29,7 @@
     "end": "2026-11-03T21:00:00",
     "colorId": "3",
     "location": "",
-    "description": "You: 12:00–21:00 (9h 00m) · week total 44h 30m\n\nDM: Jack 08:30–16:30 → George 16:00–22:45\n\nOPENING bar (start 08:00–10:30)\n• Richard 08:30–15:00 (DC)\n• Giovine 10:15–15:00\n• Myles 10:30–19:30\n\nCLOSING bar (start 14:00 or later)\n• Louis 15:00–22:00\n• Beth 15:00–22:00\n\nAdded by rota-calendar."
+    "description": "You: 12:00–21:00 (9h 00m) · week total 44h 30m\n\nDM: Jack 08:30–16:30 → George 16:00–22:45\n\nOPENING bar (start 08:00–10:30)\n• Richard 08:30–15:00 (DC – deep clean)\n• Giovine 10:15–15:00\n• Myles 10:30–19:30\n\nCLOSING bar (start 14:00 or later)\n• Louis 15:00–22:00\n• Beth 15:00–22:00\n\nAdded by rota-calendar."
   },
   {
     "summary": "Picture House shift – Bar",

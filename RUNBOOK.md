@@ -41,7 +41,7 @@ Write `weeks/<Friday YYYY-MM-DD>.json`:
 
 - **`team`** is everyone else in **Will's section** that day. That's normally Bar.
 - **`dm`** is that day's DM-section shifts.
-- **`note`** holds codes such as SR, DC, BL or "+". Don't change times because of a code.
+- **`note`** holds codes such as SR, DC, BL or "+". Don't change times because of a code. `rota.py` writes out known codes from `config.json` (SR = stock rotate, DC = deep clean, BL = beer lines). Unknown codes are kept as printed and flagged in the report. If Will has a code on his own shift, it shows on his event as "Your task".
 
 Then run `python3 rota.py weeks/<file>.json`. It writes `.md` (the table), `.ics` and `.events.json`.
 

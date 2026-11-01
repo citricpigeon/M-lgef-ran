@@ -1,0 +1,26 @@
+[
+  {
+    "summary": "Picture House shift – Floor",
+    "start": "2026-11-09T10:00:00",
+    "end": "2026-11-09T16:30:00",
+    "colorId": "3",
+    "location": "",
+    "description": "You: 10:00–16:30 (6h 30m) · week total 21h 00m\n\nAdded by rota-calendar."
+  },
+  {
+    "summary": "Picture House shift – Bar",
+    "start": "2026-11-11T17:45:00",
+    "end": "2026-11-12T00:15:00",
+    "colorId": "3",
+    "location": "",
+    "description": "You: 17:45–00:15 (6h 30m) · week total 21h 00m\n\nAdded by rota-calendar."
+  },
+  {
+    "summary": "Picture House shift – Box office",
+    "start": "2026-11-14T12:00:00",
+    "end": "2026-11-14T20:00:00",
+    "colorId": "3",
+    "location": "",
+    "description": "You: 12:00–20:00 (8h 00m) · week total 21h 00m\n\nAdded by rota-calendar."
+  }
+]
