@@ -88,3 +88,13 @@ Updates that changed how the system works get a post on Searu (code `mg`). Quest
 **Asked:** Here's the origin and meaning of the name (from Gemini, to fact-check). Unpaid breaks don't matter. SR is stock rotate, DC is deep clean and BL is beer lines.
 **Changed:** Code meanings added to `config.json`, so `rota.py` now writes them out in full: "Richard 08:30–16:30 (DC – deep clean)", plus a "Your task" line if Will has a code on his own shift. Hours are confirmed as clock-on to clock-off, so the table drops its break columns unless break rules are switched on, and it gains a Task column. Mon and Tue events in the calendar updated. The name's meaning was checked against Bosworth-Toller and added to the README. Three Gemini claims were corrected: *ġefēran* is a weak verb, not strong class 7; it means "to go, reach, attain", not "travel together" or "bring into harmony" (the companion sense belongs to the noun *ġefēra*); and *ē* is said "ay", not "air".
 **Searu:** mg-12 (the name goes on the project page and in mg-99)
+
+## U16 · Feature · 18:17
+**Asked:** "+" means carrying on somewhere else afterwards (for example 10:30–18:00 on Bar, then 18:00–23:00 on Box or Usher). Staff meetings should be red events of their own, at the time on the rota. Nobody knows what ST means yet, so ignore it and note that it's unknown.
+**Changed:**
+- **"+":** If Will's shift has "+", his next shift that day is read as its own event, and both events show the link ("Then: Box 18:00–23:00", "Before this: Bar 10:30–18:00") and a day total. If the second part can't be found, the event says to check the sheet. For team members, the event shows where they go next ("then Box 18:30–22:00").
+- **Staff meetings:** read from the rota into `meetings`, and created as red events (`colorId` 11, Tomato) whether or not Will is working. "Attend one" sessions are all added and labelled.
+- **Unknown codes:** ST is now listed as not known, and events show "ST – meaning not known yet" until Will confirms it. "&" is marked unconfirmed.
+- Tested on a made-up week (`weeks/example.json`). This week's real events come out identical. The 4–10 Sep rota's 9–10am meetings were recorded in its week file. That week is in the past, so nothing was added to the calendar.
+
+**Searu:** mg-13

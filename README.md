@@ -86,7 +86,11 @@ Found by testing on 18 real rotas:
   | SR | Stock rotate |
   | DC | Deep clean |
   | BL | Beer lines (cleaning them) |
-  | `+`, `&`, ST | Not confirmed yet |
+  | `+` | Carries on in another area afterwards, for example Bar 10:30–18:00+ then Box 18:00–23:00. If it's my shift, the second part becomes its own event and I get a day total. |
+  | ST | **Not known yet.** Neither of us knows; I'm finding out. Shown as "meaning not known yet". |
+  | `&` | Not confirmed yet |
+
+- **Staff meetings** printed on the rota become their own **red** events (Google's Tomato) at the time shown, whether or not I'm working that day. If the rota says "attend one", each session is added and marked "(attend one)".
 - **Camera RAW (DNG) files** can be read through their built-in preview, but JPG or HEIC is better.
 
 ## Settings (`config.json`)
@@ -98,15 +102,16 @@ Found by testing on 18 real rotas:
 | Openers | Start 08:00–10:30 |
 | Closers | Start 14:00 or later |
 | Hours | Clock-on to clock-off (breaks don't matter) |
-| Codes | SR, DC, BL written out in full |
+| Codes | SR, DC, BL and + written out in full; ST and & not known yet |
+| Staff meetings | Own event, Google colour 11 (Tomato, red) |
 
 ## Status
 
 Working end to end since 1 Nov 2026. The week of 30 Oct is in my calendar.
 
 Still open:
-- What "+", "&" and ST mean
-- Whether staff meetings go in the calendar as separate events
+- What ST means. Neither of us knows yet; I'll find out and update it.
+- What "&" means
 
 ## The name
 
