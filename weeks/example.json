@@ -1,0 +1,8 @@
+{
+  "week_commencing": "2026-11-09",
+  "shifts": [
+    {"date": "2026-11-09", "start": "10:00", "end": "16:30", "role": "Floor"},
+    {"date": "2026-11-11", "start": "17:45", "end": "00:15", "role": "Bar"},
+    {"date": "2026-11-14", "start": "12:00", "end": "20:00", "role": "Box office"}
+  ]
+}
