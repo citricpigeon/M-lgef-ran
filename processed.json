@@ -1,0 +1,30 @@
+{
+  "drive_folder": {"name": "Photos of rotas for claude", "id": "1yZulk-CSy8iuz_5lY0UTfhmNN-yLpOo-"},
+  "status_key": {
+    "calendared": "processed and shifts added to Google Calendar",
+    "history": "processed into weeks/ or history/, past week, not added to the calendar",
+    "seen-old": "an older rota, seen but not processed; past, so never calendared"
+  },
+  "files": [
+    {"id": "1ErB0hkB-sPpAVFLmTFzPd20dGlagK6Oh", "title": "f55f19e2-30d3-427f-8fb3-ed46c31bde0d.jpg", "week": "2026-10-30", "status": "calendared",
+     "events": {"2026-11-02": "qlcrunp04ssni7kd0685juvna8", "2026-11-03": "rrkplmi4f0ld459o4ardr3vitg", "2026-11-04": "aeja93mtde8e8ql8e1d54qfrtg"},
+     "note": "Fri 30 and Sat 31 had already passed when added, so only Mon-Wed were calendared"},
+    {"id": "1dDaZ88qsyEXHvAQQtMTMt5u6isXDT1lZ", "title": "6edeb147-1f03-46d9-b170-642367ba03fb.jpg", "week": "2026-10-23", "status": "history"},
+    {"id": "1pUeun6o5mX0H3epDFI16EnlnPRFeZLUI", "title": "5334e6fe-9238-4fd0-953a-34e2c88984e4.jpg", "week": "2026-10-02", "status": "history"},
+    {"id": "13hxRW3P3OvWhB2-K3uyTUv_Jq24OrQw7", "title": "IMG_5078.DNG", "week": "2026-09-04", "status": "history", "note": "month not printed; Sep inferred"},
+    {"id": "1XMUVfx9Df_SRhmTeujtEfdvv6nOQbChZ", "title": "0c5e3945-f33f-45f4-93ec-db5156fd6e8f.jpg", "week": "2026-08-28", "status": "history", "note": "month not printed; Aug inferred"},
+    {"id": "1Hn1W7xGDc48giOGHXcvM-eMUJ8vmB4Ep", "title": "076b7221-0bbe-46fc-95e9-defd14dc6b20.jpg", "week": null, "status": "history", "note": "no dates printed; in history/ as week B"},
+    {"id": "1R_M3VKXHM5jmw2zonR-lgxCYEI1D_wRn", "title": "d4c7e4d4-e2cb-4a46-8763-65b860cbef3d.jpg", "week": null, "status": "history", "note": "no dates printed; in history/ as week D"},
+    {"id": "1J3DX2TN1wTTLRHFXimwuXNc75eFhMd3L", "title": "491D5F1A-A0ED-4D2E-865C-33D2EBBB2304.jpg", "week": "Fri 11 - Thu 17 (probably Sep 2026)", "status": "seen-old"},
+    {"id": "15UmxsR0dnCgASxDGbQ6YxVo0MzGg9MKr", "title": "5D96F15A-2014-4447-B7E8-A53D31E7A3E9.jpg", "week": "Fri 7 - Thu 13 (probably Aug 2026)", "status": "seen-old"},
+    {"id": "1_mBDy0TrYDcRlYTmBfvW14of2188-gQZ", "title": "c647f300-99f6-414e-b301-969f959fa888.jpg", "week": "Fri 24 - Thu 30", "status": "seen-old"},
+    {"id": "1NspMkpnCEAymuSFqk8-Z1o7fdJ5cmLr8", "title": "2b9203d3-4c74-4f07-8002-c8adf5ece522.jpg", "week": "Fri 29 - Thu 4", "status": "seen-old"},
+    {"id": "1WA_klgwqNIkaps3MaG65mr-rEtqcnq09", "title": "4d3d26ac-46da-4534-9227-b5a355ebc730.jpg", "week": "Fri 3 - Thu 9", "status": "seen-old"},
+    {"id": "1R31TKAMrbZUpa5jocrRfB769jEcOhP3F", "title": "2a5685ee-00c2-49d5-aa7f-3362d173b14c.jpg", "week": "Fri 15 - Thu 21", "status": "seen-old"},
+    {"id": "1ZnfEFVOX4vKq96UkIj4O5NqQtrTHfUn_", "title": "0744da64-4aa7-45d3-9ad4-2234e7a55526.jpg", "week": "Fri 22 - Thu 28", "status": "seen-old"},
+    {"id": "1aeaSbVH6d3P8vNVvfbqKLCTTVoxQ6cpF", "title": "d4133e12-34fb-483d-95c1-bbfa638741e1.jpg", "week": "Fri 10 - Thu 16", "status": "seen-old"},
+    {"id": "1m8isK6aGwY-JPTSvTs6XiTbhy3N1Ybp2", "title": "f8f97fd7-89c3-47c3-8f54-d4e0650dffd4.jpg", "week": "Fri 17 - Thu 23", "status": "seen-old"},
+    {"id": "17FbMkYdC5IA6wvza_TLLW6OpdOYsXqy7", "title": "bb991a59-da13-4e6c-b12c-98efa22bcfb9.jpg", "week": "Fri 5 - Thu 11", "status": "seen-old"},
+    {"id": "1LmfNT9TWNs5IKHpEsPz3eu04kIEvrwpn", "title": "143f672c-c329-4fe0-9789-a3fc6340f260.jpg", "week": "Fri 1 - Thu 7", "status": "seen-old"}
+  ]
+}
