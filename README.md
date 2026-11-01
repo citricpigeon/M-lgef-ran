@@ -79,7 +79,14 @@ Found by testing on 18 real rotas:
 
 - **Dates are unreliable.** Some sheets print no dates, some no month, and one printed Thursday as "THU 29" when it was 5 Nov. The run works dates out from the Friday, and asks if it can't.
 - **My name varies:** "William", "Wiliam", "Will".
-- **Codes** after times or names: SR, DC, BL, ST, "+", "&". These are kept as notes until their meanings are confirmed.
+- **Codes** after times or names. Known codes are written out in full on events and in the table, and unknown ones are kept as printed:
+
+  | Code | Meaning |
+  |---|---|
+  | SR | Stock rotate |
+  | DC | Deep clean |
+  | BL | Beer lines (cleaning them) |
+  | `+`, `&`, ST | Not confirmed yet |
 - **Camera RAW (DNG) files** can be read through their built-in preview, but JPG or HEIC is better.
 
 ## Settings (`config.json`)
@@ -90,16 +97,29 @@ Found by testing on 18 real rotas:
 | Event colour | Google colour 3 (Grape) |
 | Openers | Start 08:00–10:30 |
 | Closers | Start 14:00 or later |
-| Unpaid breaks | None yet (clock-on to clock-off), still to confirm |
+| Hours | Clock-on to clock-off (breaks don't matter) |
+| Codes | SR, DC, BL written out in full |
 
 ## Status
 
 Working end to end since 1 Nov 2026. The week of 30 Oct is in my calendar.
 
 Still open:
-- Unpaid breaks: deduct, or count clock-on to clock-off?
-- What SR, DC, BL and "+" mean
+- What "+", "&" and ST mean
 - Whether staff meetings go in the calendar as separate events
+
+## The name
+
+**Mālgefēran** (say *MAHL-yeh-fay-ran*) is a modern compound of two Old English words. It isn't recorded as a single word in Old English.
+
+- **māl** (usually spelt *mǣl*), a neuter noun: a measure, a mark, a **fixed or appointed time**, a season, an occasion, a mealtime. It's the root of modern *meal* and of German *-mal* in *einmal*.
+- **ġefēran**, a weak verb (past tense *ġefērde*): **to go, travel, get to a place, reach, attain**. It comes from *fēran*, "to go", and *ġe-* often marks reaching the end of an action, so *ġefēran* is going *and arriving*.
+
+Put together, it means roughly **"reaching the appointed times"**, which is what the tool does with a week of shifts.
+
+*Beowulf* uses both roots in one line, when the coastguard leaves the Geats at Heorot (line 316): ***Mǣl is mē tō fēran***, "it is time for me to go."
+
+A related noun, *ġefēra*, means "companion" or "comrade", so the name also carries a faint sense of the people you work alongside. That's the bar team on every event.
 
 ## Searu
 

@@ -83,3 +83,8 @@ Updates that changed how the system works get a post on Searu (code `mg`). Quest
 **Asked:** Create a project folder in `C:\Projects`, write a README covering the whole flow from a Drive upload to the calendar, log every prompt as an update, and post each change to Searu.
 **Changed:** Added `README.md`, `CHANGELOG.md`, `RUNBOOK.md`, `CLAUDE.md` and `processed.json`. Created `C:\Projects\Mālgefēran`. Two ways to start a run: a scheduled check of the Drive folder at 08:37 and 17:37 UK time (it only writes to the calendar when every shift was read clearly), and a "do my rota" skill that confirms before writing. Searu project page `malgeferan`, draft posts mg-01 to mg-11 plus the mg-99 overview, and two new skill names: Automation and Document extraction. Commit `60ec920`.
 **Searu:** mg-11
+
+## U15 · Feature · 18:09
+**Asked:** Here's the origin and meaning of the name (from Gemini, to fact-check). Unpaid breaks don't matter. SR is stock rotate, DC is deep clean and BL is beer lines.
+**Changed:** Code meanings added to `config.json`, so `rota.py` now writes them out in full: "Richard 08:30–16:30 (DC – deep clean)", plus a "Your task" line if Will has a code on his own shift. Hours are confirmed as clock-on to clock-off, so the table drops its break columns unless break rules are switched on, and it gains a Task column. Mon and Tue events in the calendar updated. The name's meaning was checked against Bosworth-Toller and added to the README. Three Gemini claims were corrected: *ġefēran* is a weak verb, not strong class 7; it means "to go, reach, attain", not "travel together" or "bring into harmony" (the companion sense belongs to the noun *ġefēra*); and *ē* is said "ay", not "air".
+**Searu:** mg-12 (the name goes on the project page and in mg-99)
