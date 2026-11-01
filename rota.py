@@ -29,6 +29,36 @@ def parse_shift(s):
     return {**s, "start_dt": start, "end_dt": end, "length": length, "unpaid_break_min": unpaid, "paid": paid}
 
 
+def to_min(t):
+    h, m = t.split(":")
+    return int(h) * 60 + int(m)
+
+
+def team_text(shift, week_total):
+    """Who else is on the bar that day, split into openers and closers."""
+    open_from, open_to = (to_min(t) for t in CONFIG.get("opening_start_range", ["08:00", "10:30"]))
+    close_from = to_min(CONFIG.get("closing_start_from", "14:00"))
+    openers, closers, mids = [], [], []
+    for p in sorted(shift.get("team", []), key=lambda p: p["start"]):
+        line = f"• {p['name']} {p['start']}–{p['end']}" + (f" ({p['note']})" if p.get("note") else "")
+        start = to_min(p["start"])
+        if open_from <= start <= open_to:
+            openers.append(line)
+        elif start >= close_from:
+            closers.append(line)
+        else:
+            mids.append(line)
+    out = [f"You: {shift['start']}–{shift['end']} ({hm(shift['paid'])}) · week total {hm(week_total)}"]
+    if openers:
+        out += ["", f"OPENING bar (start {CONFIG.get('opening_start_range', ['08:00', '10:30'])[0]}–{CONFIG.get('opening_start_range', ['08:00', '10:30'])[1]})"] + openers
+    if mids:
+        out += ["", "MID"] + mids
+    if closers:
+        out += ["", f"CLOSING bar (start {CONFIG.get('closing_start_from', '14:00')} or later)"] + closers
+    out += ["", "Added by rota-calendar."]
+    return "\n".join(out)
+
+
 def hm(hours):
     mins = round(hours * 60)
     return f"{mins // 60}h {mins % 60:02d}m"
@@ -53,9 +83,9 @@ def table(week, shifts):
     return "\n".join(rows) + "\n"
 
 
-def ics(shifts):
+def ics(shifts, week_total):
     def esc(t):
-        return t.replace("\\", "\\\\").replace(",", "\\,").replace(";", "\\;")
+        return t.replace("\\", "\\\\").replace(",", "\\,").replace(";", "\\;").replace("\n", "\\n")
 
     tz = CONFIG.get("timezone", "Europe/London")
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
@@ -70,7 +100,7 @@ def ics(shifts):
             f"DTSTART;TZID={tz}:{s['start_dt']:%Y%m%dT%H%M%S}",
             f"DTEND;TZID={tz}:{s['end_dt']:%Y%m%dT%H%M%S}",
             f"SUMMARY:{esc(title)}",
-            f"DESCRIPTION:{esc('Paid ' + hm(s['paid']) + '. Added by rota-calendar.')}",
+            f"DESCRIPTION:{esc(team_text(s, week_total))}",
         ]
         if CONFIG.get("location"):
             lines.append(f"LOCATION:{esc(CONFIG['location'])}")
@@ -83,10 +113,25 @@ def main(path):
     path = Path(path)
     week = json.loads(path.read_text())
     shifts = sorted((parse_shift(s) for s in week["shifts"]), key=lambda s: s["start_dt"])
+    week_total = sum(s["paid"] for s in shifts)
     md = table(week, shifts)
+    events = [
+        {
+            "summary": CONFIG.get("event_title", "Work shift") + (f" – {s['role']}" if s.get("role") else ""),
+            "start": f"{s['start_dt']:%Y-%m-%dT%H:%M:%S}",
+            "end": f"{s['end_dt']:%Y-%m-%dT%H:%M:%S}",
+            "colorId": CONFIG.get("google_color_id", "3"),
+            "location": CONFIG.get("location", ""),
+            "description": team_text(s, week_total),
+        }
+        for s in shifts
+    ]
     path.with_suffix(".md").write_text(md)
-    path.with_suffix(".ics").write_text(ics(shifts))
+    path.with_suffix(".ics").write_text(ics(shifts, week_total))
+    path.with_suffix(".events.json").write_text(json.dumps(events, indent=2, ensure_ascii=False))
     print(md)
+    for e in events:
+        print(f"--- {e['start'][:10]} ---\n{e['description']}\n")
     print(f"Wrote {path.with_suffix('.md')} and {path.with_suffix('.ics')}")
 
 

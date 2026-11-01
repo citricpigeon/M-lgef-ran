@@ -4,5 +4,8 @@
   "timezone": "Europe/London",
   "event_title": "Picture House shift",
   "location": "",
-  "unpaid_break_rules": []
+  "unpaid_break_rules": [],
+  "google_color_id": "3",
+  "opening_start_range": ["08:00", "10:30"],
+  "closing_start_from": "14:00"
 }
