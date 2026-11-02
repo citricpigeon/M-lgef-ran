@@ -1,0 +1,47 @@
+[
+  {
+    "kind": "shift",
+    "summary": "Picture House shift – Bar",
+    "start": "2026-10-09T12:00:00",
+    "end": "2026-10-09T21:00:00",
+    "colorId": "3",
+    "location": "",
+    "description": "You: 12:00–21:00 (9h 00m) · week total 36h 30m\n\nDM: Danny 08:30–16:45 → George 15:00–23:00\n\nOPENING bar (start 08:00–10:30)\n• Lila & Jake 08:30–16:30\n• Myles 10:30–18:00\n• Beth 10:30–15:00\n\nCLOSING bar (start 14:00 or later)\n• Ben 15:00–23:00\n• Louis 16:00–23:00\n\nAdded by rota-calendar."
+  },
+  {
+    "kind": "shift",
+    "summary": "Picture House shift – Bar",
+    "start": "2026-10-10T10:30:00",
+    "end": "2026-10-10T19:00:00",
+    "colorId": "3",
+    "location": "",
+    "description": "You: 10:30–19:00 (8h 30m) · week total 36h 30m\n\nDM: Danny 08:30–16:30 → George 15:30–23:30\n\nOPENING bar (start 08:00–10:30)\n• Lila 08:30–16:30 (BL – beer lines)\n• Ben 10:00–16:00\n\nMID\n• Olivia 12:00–21:00\n\nCLOSING bar (start 14:00 or later)\n• Myles 16:00–23:00\n• Louis 16:30–23:30\n\nAdded by rota-calendar."
+  },
+  {
+    "kind": "shift",
+    "summary": "Picture House shift – Bar",
+    "start": "2026-10-11T08:30:00",
+    "end": "2026-10-11T14:00:00",
+    "colorId": "3",
+    "location": "",
+    "description": "You: 08:30–14:00 (5h 30m) · week total 36h 30m\nYour task: DC – deep clean\n\nDM: Isobel 08:30–16:30 → George 14:15–22:15\n\nOPENING bar (start 08:00–10:30)\n• Jack 08:30–16:30 (SR – stock rotate)\n• Myles 10:30–18:00\n\nMID\n• Kieran 12:00–20:30\n\nCLOSING bar (start 14:00 or later)\n• Lila 14:00–22:00\n• Louis 16:30–22:00\n\nAdded by rota-calendar."
+  },
+  {
+    "kind": "shift",
+    "summary": "Picture House shift – Bar",
+    "start": "2026-10-14T10:30:00",
+    "end": "2026-10-14T16:00:00",
+    "colorId": "3",
+    "location": "",
+    "description": "You: 10:30–16:00 (5h 30m) · week total 36h 30m\n\nDM: Jack 08:30–16:30 → Danny 14:30–22:30\n\nOPENING bar (start 08:00–10:30)\n• Lottie 09:00–16:30\n• Giovine 10:30–15:00\n\nMID\n• Isobel 12:00–16:30\n\nCLOSING bar (start 14:00 or later)\n• Olivia 16:00–22:00\n• Kieran 16:30–20:30\n• Beth 16:30–22:00\n\nAdded by rota-calendar."
+  },
+  {
+    "kind": "shift",
+    "summary": "Picture House shift – Bar",
+    "start": "2026-10-15T08:30:00",
+    "end": "2026-10-15T16:30:00",
+    "colorId": "3",
+    "location": "",
+    "description": "You: 08:30–16:30 (8h 00m) · week total 36h 30m\n\nDM: George 07:30–15:30 → Danny 15:00–23:00\n\nOPENING bar (start 08:00–10:30)\n• Lottie 10:15–16:00\n• Giovine 10:30–15:00\n\nMID\n• Louis 12:00–20:30\n\nCLOSING bar (start 14:00 or later)\n• Kieran 16:00–22:00\n• Gracie 16:30–22:00\n\nAdded by rota-calendar."
+  }
+]

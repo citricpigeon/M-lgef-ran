@@ -1,0 +1,45 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//rota-calendar//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:20261016T1030-shift-rota-calendar@will
+DTSTAMP:20261102T180214Z
+DTSTART;TZID=Europe/London:20261016T103000
+DTEND;TZID=Europe/London:20261016T180000
+SUMMARY:Picture House shift – Bar
+DESCRIPTION:You: 10:30–18:00 (7h 30m) · week total 42h 30m\n\nDM: Izzy 08:30–16:45 → Danny 15:00–23:00\n\nOPENING bar (start 08:00–10:30)\n• Ben 08:30–16:30 (dels)\n• Lottie 10:30–16:00\n\nMID\n• Jack/Jake 12:00–21:00\n\nCLOSING bar (start 14:00 or later)\n• Olivia 16:00–23:00\n• Myles 16:00–23:00\n\nAdded by rota-calendar.
+END:VEVENT
+BEGIN:VEVENT
+UID:20261017T1200-shift-rota-calendar@will
+DTSTAMP:20261102T180214Z
+DTSTART;TZID=Europe/London:20261017T120000
+DTEND;TZID=Europe/London:20261017T210000
+SUMMARY:Picture House shift – Bar
+DESCRIPTION:You: 12:00–21:00 (9h 00m) · week total 42h 30m\n\nDM: Lila 08:30–16:30 → George 15:00–23:00\n\nOPENING bar (start 08:00–10:30)\n• Jack 08:30–16:30 (lines)\n• Gracie 09:30–18:00\n• Myles 10:30–16:00\n\nCLOSING bar (start 14:00 or later)\n• Olivia 16:00–23:00\n• Beth 16:30–23:00\n\nAdded by rota-calendar.
+END:VEVENT
+BEGIN:VEVENT
+UID:20261018T0830-shift-rota-calendar@will
+DTSTAMP:20261102T180214Z
+DTSTART;TZID=Europe/London:20261018T083000
+DTEND;TZID=Europe/London:20261018T180000
+SUMMARY:Picture House shift – Bar
+DESCRIPTION:You: 08:30–18:00 (9h 30m) · week total 42h 30m\nYour task: DC – deep clean\n\nDM: Lila 08:30–16:30 → George 14:00–22:00\n\nOPENING bar (start 08:00–10:30)\n• Myles 08:30–16:30 (sc)\n• Ben 10:30–16:00 (then Base 16:30–21:30)\n\nMID\n• Gracie 12:00–20:30\n\nCLOSING bar (start 14:00 or later)\n• Olivia 16:00–22:00\n• Giovine 16:30–22:00\n\nAdded by rota-calendar.
+END:VEVENT
+BEGIN:VEVENT
+UID:20261019T0830-shift-rota-calendar@will
+DTSTAMP:20261102T180214Z
+DTSTART;TZID=Europe/London:20261019T083000
+DTEND;TZID=Europe/London:20261019T163000
+SUMMARY:Picture House shift – Bar
+DESCRIPTION:You: 08:30–16:30 (8h 00m) · week total 42h 30m\nYour task: DC – deep clean\n\nDM: George 08:00–16:00 → Danny 14:15–22:15\n\nOPENING bar (start 08:00–10:30)\n• Beth 08:30–16:00 (DC – deep clean)\n• Giovine 10:30–15:00\n\nMID\n• Grace 12:00–20:30\n\nCLOSING bar (start 14:00 or later)\n• Gracie 16:00–22:00\n• Kieran 16:30–22:00\n\nAdded by rota-calendar.
+END:VEVENT
+BEGIN:VEVENT
+UID:20261020T1200-shift-rota-calendar@will
+DTSTAMP:20261102T180214Z
+DTSTART;TZID=Europe/London:20261020T120000
+DTEND;TZID=Europe/London:20261020T203000
+SUMMARY:Picture House shift – Bar
+DESCRIPTION:You: 12:00–20:30 (8h 30m) · week total 42h 30m\n\nDM: Lila 08:30–16:30 → Danny 14:15–22:15\n\nOPENING bar (start 08:00–10:30)\n• Jack 09:30–14:30\n• Lottie 10:15–16:00\n• Louise 10:30–15:00\n\nCLOSING bar (start 14:00 or later)\n• Gracie 14:30–22:00\n• Grace 16:00–22:00\n\nAdded by rota-calendar.
+END:VEVENT
+END:VCALENDAR

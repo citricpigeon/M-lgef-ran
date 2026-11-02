@@ -1,0 +1,248 @@
+{
+  "week_commencing": "2026-10-16",
+  "source": "Drive 4893eb82 (OCT 2026 printed). Past week, history only. Codes printed in lower case (dc, dels, lines, sc). Tue Gracie printed '114:30-22:00', read as 14:30. Mon 19 admin: coffee training 8-10am; Wed 21: Jack first aid. No staff meetings.",
+  "status": "history",
+  "shifts": [
+    {
+      "date": "2026-10-16",
+      "start": "10:30",
+      "end": "18:00",
+      "role": "Bar",
+      "note": "",
+      "dm": [
+        {
+          "name": "Izzy",
+          "start": "08:30",
+          "end": "16:45",
+          "note": "Last day"
+        },
+        {
+          "name": "Danny",
+          "start": "15:00",
+          "end": "23:00"
+        }
+      ],
+      "team": [
+        {
+          "name": "Ben",
+          "start": "08:30",
+          "end": "16:30",
+          "note": "dels"
+        },
+        {
+          "name": "Lottie",
+          "start": "10:30",
+          "end": "16:00"
+        },
+        {
+          "name": "Jack/Jake",
+          "start": "12:00",
+          "end": "21:00"
+        },
+        {
+          "name": "Olivia",
+          "start": "16:00",
+          "end": "23:00"
+        },
+        {
+          "name": "Myles",
+          "start": "16:00",
+          "end": "23:00"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-17",
+      "start": "12:00",
+      "end": "21:00",
+      "role": "Bar",
+      "note": "",
+      "dm": [
+        {
+          "name": "Lila",
+          "start": "08:30",
+          "end": "16:30"
+        },
+        {
+          "name": "George",
+          "start": "15:00",
+          "end": "23:00"
+        }
+      ],
+      "team": [
+        {
+          "name": "Jack",
+          "start": "08:30",
+          "end": "16:30",
+          "note": "lines"
+        },
+        {
+          "name": "Gracie",
+          "start": "09:30",
+          "end": "18:00"
+        },
+        {
+          "name": "Myles",
+          "start": "10:30",
+          "end": "16:00"
+        },
+        {
+          "name": "Olivia",
+          "start": "16:00",
+          "end": "23:00"
+        },
+        {
+          "name": "Beth",
+          "start": "16:30",
+          "end": "23:00"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "start": "08:30",
+      "end": "18:00",
+      "role": "Bar",
+      "note": "dc",
+      "dm": [
+        {
+          "name": "Lila",
+          "start": "08:30",
+          "end": "16:30"
+        },
+        {
+          "name": "George",
+          "start": "14:00",
+          "end": "22:00"
+        }
+      ],
+      "team": [
+        {
+          "name": "Myles",
+          "start": "08:30",
+          "end": "16:30",
+          "note": "sc"
+        },
+        {
+          "name": "Ben",
+          "start": "10:30",
+          "end": "16:00",
+          "note": "+",
+          "then": {
+            "section": "Base",
+            "start": "16:30",
+            "end": "21:30"
+          }
+        },
+        {
+          "name": "Gracie",
+          "start": "12:00",
+          "end": "20:30"
+        },
+        {
+          "name": "Olivia",
+          "start": "16:00",
+          "end": "22:00"
+        },
+        {
+          "name": "Giovine",
+          "start": "16:30",
+          "end": "22:00"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-19",
+      "start": "08:30",
+      "end": "16:30",
+      "role": "Bar",
+      "note": "dc",
+      "dm": [
+        {
+          "name": "George",
+          "start": "08:00",
+          "end": "16:00"
+        },
+        {
+          "name": "Danny",
+          "start": "14:15",
+          "end": "22:15"
+        }
+      ],
+      "team": [
+        {
+          "name": "Beth",
+          "start": "08:30",
+          "end": "16:00",
+          "note": "dc"
+        },
+        {
+          "name": "Giovine",
+          "start": "10:30",
+          "end": "15:00"
+        },
+        {
+          "name": "Grace",
+          "start": "12:00",
+          "end": "20:30"
+        },
+        {
+          "name": "Gracie",
+          "start": "16:00",
+          "end": "22:00"
+        },
+        {
+          "name": "Kieran",
+          "start": "16:30",
+          "end": "22:00"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-20",
+      "start": "12:00",
+      "end": "20:30",
+      "role": "Bar",
+      "note": "",
+      "dm": [
+        {
+          "name": "Lila",
+          "start": "08:30",
+          "end": "16:30"
+        },
+        {
+          "name": "Danny",
+          "start": "14:15",
+          "end": "22:15"
+        }
+      ],
+      "team": [
+        {
+          "name": "Jack",
+          "start": "09:30",
+          "end": "14:30"
+        },
+        {
+          "name": "Lottie",
+          "start": "10:15",
+          "end": "16:00"
+        },
+        {
+          "name": "Louise",
+          "start": "10:30",
+          "end": "15:00"
+        },
+        {
+          "name": "Gracie",
+          "start": "14:30",
+          "end": "22:00"
+        },
+        {
+          "name": "Grace",
+          "start": "16:00",
+          "end": "22:00"
+        }
+      ]
+    }
+  ]
+}

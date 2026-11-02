@@ -9,6 +9,8 @@
     {"id": "1ErB0hkB-sPpAVFLmTFzPd20dGlagK6Oh", "title": "f55f19e2-30d3-427f-8fb3-ed46c31bde0d.jpg", "week": "2026-10-30", "status": "calendared",
      "events": {"2026-11-02": "qlcrunp04ssni7kd0685juvna8", "2026-11-03": "rrkplmi4f0ld459o4ardr3vitg", "2026-11-04": "aeja93mtde8e8ql8e1d54qfrtg"},
      "note": "Fri 30 and Sat 31 had already passed when added, so only Mon-Wed were calendared"},
+    {"id": "1-6Q17Aalr8xzb4gzTxADb2a0A2PvXZJy", "title": "4893eb82-c77d-4515-ac42-faee1b97d29a.jpg", "week": "2026-10-16", "status": "history", "note": "found by the 2 Nov scheduled run; past week, not calendared"},
+    {"id": "1VWwo6A81lCO0-YbG0XYtnTp8KkuBp8zN", "title": "192d73c1-2d65-4f1d-a130-615059cce5bb.jpg", "week": "2026-10-09", "status": "history", "note": "found by the 2 Nov scheduled run; past week, not calendared"},
     {"id": "1dDaZ88qsyEXHvAQQtMTMt5u6isXDT1lZ", "title": "6edeb147-1f03-46d9-b170-642367ba03fb.jpg", "week": "2026-10-23", "status": "history"},
     {"id": "1pUeun6o5mX0H3epDFI16EnlnPRFeZLUI", "title": "5334e6fe-9238-4fd0-953a-34e2c88984e4.jpg", "week": "2026-10-02", "status": "history"},
     {"id": "13hxRW3P3OvWhB2-K3uyTUv_Jq24OrQw7", "title": "IMG_5078.DNG", "week": "2026-09-04", "status": "history", "note": "month not printed; Sep inferred"},
@@ -25,6 +27,12 @@
     {"id": "1aeaSbVH6d3P8vNVvfbqKLCTTVoxQ6cpF", "title": "d4133e12-34fb-483d-95c1-bbfa638741e1.jpg", "week": "Fri 10 - Thu 16", "status": "seen-old"},
     {"id": "1m8isK6aGwY-JPTSvTs6XiTbhy3N1Ybp2", "title": "f8f97fd7-89c3-47c3-8f54-d4e0650dffd4.jpg", "week": "Fri 17 - Thu 23", "status": "seen-old"},
     {"id": "17FbMkYdC5IA6wvza_TLLW6OpdOYsXqy7", "title": "bb991a59-da13-4e6c-b12c-98efa22bcfb9.jpg", "week": "Fri 5 - Thu 11", "status": "seen-old"},
-    {"id": "1LmfNT9TWNs5IKHpEsPz3eu04kIEvrwpn", "title": "143f672c-c329-4fe0-9789-a3fc6340f260.jpg", "week": "Fri 1 - Thu 7", "status": "seen-old"}
+    {"id": "1LmfNT9TWNs5IKHpEsPz3eu04kIEvrwpn", "title": "143f672c-c329-4fe0-9789-a3fc6340f260.jpg", "week": "Fri 1 - Thu 7", "status": "seen-old"},
+    {"id": "12Sx3VosPjDyUbkWuQXS2Sb7oVqNMn5Ph", "title": "35cfc4ff-ff66-466a-b76f-ec045ba9755a.jpg", "week": "Fri 31 - Thu 6 (no month printed; probably Jul-Aug 2026)", "status": "seen-old"},
+    {"id": "1wkvcr4wYF_TG6Xs8XKmNPV1ZW74LCgQG", "title": "88767ec5-5020-49d2-96c5-cd8482a2aaed.jpg", "week": "Fri 14 - Thu 20 (no month printed; probably Aug 2026)", "status": "seen-old"},
+    {"id": "1Md-3PDAdV1R7MXo16rn6bxPkNCcFoqjs", "title": "a37c5eed-7a03-4cad-91a2-4b17aee76758.jpg", "week": "Fri 12 - Thu 18 (no month printed; probably Jun 2026)", "status": "seen-old"},
+    {"id": "1i7Dc-Jqc6UoEezBDGddPchNEF2SKYU7f", "title": "5e799afb-8cc1-490a-b436-1fecc762747b.jpg", "week": "Fri 24 - Thu 30 (no month printed; probably Jul 2026)", "status": "seen-old"},
+    {"id": "1abqceV9EdZycK0V5eJ_f-skjqy24ypru", "title": "12bbc1a8-5eae-4b31-917d-c841a4565e9e.jpg", "week": "Fri 19 - Thu 25 (no month printed; probably Jun 2026)", "status": "seen-old"},
+    {"id": "1ITNLYIhw_4H5leKnzUpeb6rdqmskjylj", "title": "652dc1ae-bc74-4223-849c-af694274936d.jpg", "week": "Fri 8 - Thu 14 (no month printed; probably May 2026)", "status": "seen-old"}
   ]
 }
