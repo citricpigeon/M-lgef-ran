@@ -103,3 +103,8 @@ Updates that changed how the system works get a post on Searu (code `mg`). Quest
 **Asked:** "dels" is deliveries.
 **Changed:** `DELS` added to the codes in `config.json`, so Will's Thursday 12 Nov event reads "Your task: DELS – deliveries" rather than the raw code.
 **Searu:** mg-14
+
+## U18 · Docs · 18:36
+**Asked:** It is November. I'll give each week, so it should keep progressing in order.
+**Changed:** `RUNBOOK.md` now treats the weeks as arriving in order. When no month is printed, the new week is the one that follows the most recent week in `weeks/`, and the run takes that without asking. It only asks (on-command) or skips and flags (scheduled) when the printed Friday doesn't follow on, for example a gap or a repeat. Scheduled runs can now calendar a monthless sheet that follows on, instead of stopping.
+**Searu:** mg-15

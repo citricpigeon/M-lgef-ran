@@ -19,7 +19,7 @@ Look at the image. If it's skewed or low-contrast, crop and zoom into sections. 
 
 - **Layout:** a Friday-to-Thursday week. Sections from top to bottom are DM, ADMIN, USH or USHER, BOX, EEAAO, BAR, BASE. Each shift's time is printed directly **above** the person's name in the same column.
 - **Keep times exactly as printed**, codes included (for example `08:30-16:00DC`, `10:30-19:30+`, `&18:00-23:00`). Treat `=` between two times as `-`.
-- **Dates:** use the printed month and year if they're there. Headers can be wrong (for example "THU 29" after "WED 4"), so count forward from the Friday. If there's no month, infer it from the most recent week in `weeks/`. If you still can't be sure, **ask** (on-command) or **skip and flag it** (scheduled).
+- **Dates:** use the printed month and year if they're there. Headers can be wrong (for example "THU 29" after "WED 4"), so count forward from the Friday. Will uploads every week in order, so if there's no month, the new week is the one that follows on from the most recent week in `weeks/` (for example "FRI 6" after the week of Fri 30 Oct is Fri 6 Nov). Take that and don't ask. Only if the printed Friday doesn't follow on (a gap, or a repeat of a week already done) **ask** (on-command) or **skip and flag it** (scheduled).
 
 ## 3. Build the week file
 
