@@ -6,6 +6,9 @@
     "seen-old": "an older rota, seen but not processed; past, so never calendared"
   },
   "files": [
+    {"id": "11DTm4eRzHjQtyeWogqnRQb3ymWMAnFUY", "title": "6a7e7292-71bc-467a-8356-2f773687af17.jpg", "week": "2026-11-06", "status": "calendared",
+     "events": {"2026-11-06": "hin89epu3pb0h1hur0rb1g0s80", "2026-11-09": "gq5co78jufqmdl56jrnkmf91oc", "2026-11-10": "dq0ksi372iccpqnpr5rocamkoo", "2026-11-11": "afhi3adovgigpaipbvbp1ovdvs", "2026-11-12": "ak7mu8cm0c35dfs9ldsr8lf3nc"},
+     "note": "2026 printed, no month; Nov confirmed by Will. Crossed-out strip at bottom of photo ignored"},
     {"id": "1ErB0hkB-sPpAVFLmTFzPd20dGlagK6Oh", "title": "f55f19e2-30d3-427f-8fb3-ed46c31bde0d.jpg", "week": "2026-10-30", "status": "calendared",
      "events": {"2026-11-02": "qlcrunp04ssni7kd0685juvna8", "2026-11-03": "rrkplmi4f0ld459o4ardr3vitg", "2026-11-04": "aeja93mtde8e8ql8e1d54qfrtg"},
      "note": "Fri 30 and Sat 31 had already passed when added, so only Mon-Wed were calendared"},
