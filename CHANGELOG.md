@@ -98,3 +98,8 @@ Updates that changed how the system works get a post on Searu (code `mg`). Quest
 - Tested on a made-up week (`weeks/example.json`). This week's real events come out identical. The 4–10 Sep rota's 9–10am meetings were recorded in its week file. That week is in the past, so nothing was added to the calendar.
 
 **Searu:** mg-13
+
+## U17 · Feature · 4 Nov 2026, 18:36
+**Asked:** "dels" is deliveries.
+**Changed:** `DELS` added to the codes in `config.json`, so Will's Thursday 12 Nov event reads "Your task: DELS – deliveries" rather than the raw code.
+**Searu:** mg-14

@@ -13,6 +13,7 @@
     "SR": "stock rotate",
     "DC": "deep clean",
     "BL": "beer lines",
+    "DELS": "deliveries",
     "+": "carries on in another area after this"
   },
   "unknown_codes": {
