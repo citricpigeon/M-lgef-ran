@@ -1,0 +1,47 @@
+[
+  {
+    "kind": "shift",
+    "summary": "Picture House shift – Bar",
+    "start": "2026-11-13T12:00:00",
+    "end": "2026-11-13T21:00:00",
+    "colorId": "3",
+    "location": "",
+    "description": "You: 12:00–21:00 (9h 00m) · week total 39h 30m\n\nDM: Jack 08:30–16:30 → Lila 15:00–23:00\n\nOPENING bar (start 08:00–10:30)\n• Rich 08:30–16:30\n• Louis 10:30–16:00\n• Grace 10:30–18:00\n\nCLOSING bar (start 14:00 or later)\n• Myles 16:00–23:00\n• Lottie 16:00–23:00\n\nAdded by rota-calendar."
+  },
+  {
+    "kind": "shift",
+    "summary": "Picture House shift – Bar",
+    "start": "2026-11-14T12:00:00",
+    "end": "2026-11-14T21:00:00",
+    "colorId": "3",
+    "location": "",
+    "description": "You: 12:00–21:00 (9h 00m) · week total 39h 30m\n\nDM: Jack 08:30–16:30 → Lila 15:30–23:30\n\nOPENING bar (start 08:00–10:30)\n• Rich 08:30–14:00 (BL – beer lines)\n• Louis 09:30–15:30\n• Olivia 10:30–19:30\n\nCLOSING bar (start 14:00 or later)\n• Jake 14:00–23:00\n• Giovine 15:30–23:00\n\nAdded by rota-calendar."
+  },
+  {
+    "kind": "shift",
+    "summary": "Picture House shift – Bar",
+    "start": "2026-11-15T08:30:00",
+    "end": "2026-11-15T14:00:00",
+    "colorId": "3",
+    "location": "",
+    "description": "You: 08:30–14:00 (5h 30m) · week total 39h 30m\n\nDM: Jack 08:30–16:30 → Lila 14:45–22:45\n\nOPENING bar (start 08:00–10:30)\n• Olivia 08:30–16:30 (DC – deep clean)\n• Grace 10:30–18:00\n\nMID\n• Rich 12:00–20:30\n\nCLOSING bar (start 14:00 or later)\n• Ben 14:00–22:00\n• Louis 16:30–22:00\n\nAdded by rota-calendar."
+  },
+  {
+    "kind": "shift",
+    "summary": "Picture House shift – Bar",
+    "start": "2026-11-18T12:00:00",
+    "end": "2026-11-18T20:30:00",
+    "colorId": "3",
+    "location": "",
+    "description": "You: 12:00–20:30 (8h 30m) · week total 39h 30m\n\nDM: Lila 08:30–16:30 → Danny 15:15–23:15\n\nOPENING bar (start 08:00–10:30)\n• Gracie 08:30–16:00\n• Giovine 10:15–15:00\n• Grace 10:30–18:00\n\nCLOSING bar (start 14:00 or later)\n• Beth 15:00–22:00\n• Louise 16:00–22:00\n\nAdded by rota-calendar."
+  },
+  {
+    "kind": "shift",
+    "summary": "Picture House shift – Bar",
+    "start": "2026-11-19T08:30:00",
+    "end": "2026-11-19T16:00:00",
+    "colorId": "3",
+    "location": "",
+    "description": "You: 08:30–16:00 (7h 30m) · week total 39h 30m\n\nDM: Lila 07:30–15:30 → Danny 14:15–22:15\n\nOPENING bar (start 08:00–10:30)\n• Giovine 10:15–15:00\n• Louise 10:30–18:00\n\nMID\n• Gracie 12:00–20:30\n\nCLOSING bar (start 14:00 or later)\n• Grace 15:00–22:00\n• Kieran 16:00–22:00\n\nAdded by rota-calendar."
+  }
+]

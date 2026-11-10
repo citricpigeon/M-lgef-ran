@@ -6,6 +6,9 @@
     "seen-old": "an older rota, seen but not processed; past, so never calendared"
   },
   "files": [
+    {"id": "1xj4_uhg1QDFjTVDyJTOK2nskdsF8TbhO", "title": "fc9344bb-1f7e-4927-a281-748fc0f7b920.jpg", "week": "2026-11-13", "status": "calendared",
+     "events": {"2026-11-13": "1h75kft0neadh8r8sds9oi5ee4", "2026-11-14": "uqftuhjmbppe4pjtfeav05t1ag", "2026-11-15": "ubvc8srke9qsc38oa4mua7mang", "2026-11-18": "t03gbaev2437esgk81e1cv2ug8", "2026-11-19": "amci9ar7h9tuvjc9dpouoi2jj0"},
+     "note": "NOV 2026 printed. Name printed as 'Will' (Fri/Sat/Wed/Thu) and 'William' (Sun); Will confirmed all five are his"},
     {"id": "11DTm4eRzHjQtyeWogqnRQb3ymWMAnFUY", "title": "6a7e7292-71bc-467a-8356-2f773687af17.jpg", "week": "2026-11-06", "status": "calendared",
      "events": {"2026-11-06": "hin89epu3pb0h1hur0rb1g0s80", "2026-11-09": "gq5co78jufqmdl56jrnkmf91oc", "2026-11-10": "dq0ksi372iccpqnpr5rocamkoo", "2026-11-11": "afhi3adovgigpaipbvbp1ovdvs", "2026-11-12": "ak7mu8cm0c35dfs9ldsr8lf3nc"},
      "note": "2026 printed, no month; Nov confirmed by Will. Crossed-out strip at bottom of photo ignored"},
