@@ -94,7 +94,8 @@ def then_text(p):
 
 def person_line(p):
     extras = [x for x in (explain(p.get("note", ""), drop_plus=has_plus(p)), then_text(p)) if x]
-    return f"• {p['name']} {p['start']}–{p['end']}" + (f" ({'; '.join(extras)})" if extras else "")
+    times = f"{p['start']}–{p['end']}" if p.get("start") and p.get("end") else "no times printed"
+    return f"• {p['name']} {times}" + (f" ({'; '.join(extras)})" if extras else "")
 
 
 def missing_then(people):
@@ -240,7 +241,7 @@ def dayoff_description(day, meetings):
         out += ["", "ELSEWHERE IN THE BUILDING"]
         for area, people in areas.items():
             out.append(area)
-            out += [person_line(p) for p in sorted(people, key=lambda p: p["start"])]
+            out += [person_line(p) for p in sorted(people, key=lambda p: p.get("start") or "")]
     out += ["", FOOTER]
     return "\n".join(out)
 

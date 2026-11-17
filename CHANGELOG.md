@@ -117,3 +117,8 @@ Updates that changed how the system works get a post on Searu (code `mg`). Quest
 - **Nothing made up:** a "+" with no second area on the sheet, or a day off whose staff weren't read, marks that day's events as **held**. On-command runs ask; scheduled runs add everything else and leave the held day out until Will answers.
 - Tested on a made-up week covering every case (`weeks/example.json`). The real shift events for w/c 6 Nov and 13 Nov come out identical to before.
 **Searu:** mg-16
+
+## U20 · Build · 17 Nov 2026, 17:05
+**Asked:** Re-read this week's rota and add the new day-off event to my days off, including Monday 16th.
+**Changed:** The Admin row on the sheet sometimes has names with no times (Cath on Mon 16, Cath and Rich on Tue 17). Day-off events used to need a time for everyone and would crash. `rota.py` now shows these people as "no times printed" rather than making times up. Other events come out the same as before.
+**Searu:** mg-17
