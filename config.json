@@ -8,7 +8,15 @@
   "google_color_id": "3",
   "opening_start_range": ["08:00", "10:30"],
   "closing_start_from": "14:00",
-  "meeting_color_id": "11",
+  "meeting_color_id": "9",
+  "count_meetings_in_hours": true,
+  "day_off_event": {
+    "title": "Day off – who's in",
+    "start": "12:00",
+    "end": "13:00",
+    "color_id": "2",
+    "section": "bar"
+  },
   "codes": {
     "SR": "stock rotate",
     "DC": "deep clean",

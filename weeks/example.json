@@ -1,71 +1,42 @@
 {
   "week_commencing": "2026-11-13",
-  "source": "Made-up test week for '+' shifts and meetings",
+  "source": "Made-up test week covering '+' shifts, every staff-meeting case and days off (U16, U19)",
   "shifts": [
-    {
-      "date": "2026-11-13",
-      "start": "10:30",
-      "end": "18:00",
-      "role": "Bar",
-      "note": "+",
-      "dm": [
-        {
-          "name": "Jack",
-          "start": "08:30",
-          "end": "16:30"
-        },
-        {
-          "name": "Lila",
-          "start": "16:00",
-          "end": "23:00"
-        }
-      ],
-      "team": [
-        {
-          "name": "Gracie",
-          "start": "10:30",
-          "end": "18:30",
-          "note": "+",
-          "then": {
-            "section": "Box",
-            "start": "18:30",
-            "end": "22:00"
-          }
-        },
-        {
-          "name": "Richard",
-          "start": "08:30",
-          "end": "16:30",
-          "note": "DC"
-        },
-        {
-          "name": "Kieran",
-          "start": "16:00",
-          "end": "23:00",
-          "note": "ST"
-        }
-      ]
-    },
-    {
-      "date": "2026-11-13",
-      "start": "18:00",
-      "end": "23:00",
-      "role": "Box"
-    },
-    {
-      "date": "2026-11-15",
-      "start": "12:00",
-      "end": "20:30",
-      "role": "Bar",
-      "note": "+"
-    }
+    {"date": "2026-11-13", "start": "10:30", "end": "18:00", "role": "Bar", "note": "+",
+     "dm": [{"name": "Jack", "start": "08:30", "end": "16:30"}, {"name": "Lila", "start": "16:00", "end": "23:00"}],
+     "team": [{"name": "Gracie", "start": "10:30", "end": "18:30", "note": "+", "then": {"section": "Box", "start": "18:30", "end": "22:00"}},
+              {"name": "Richard", "start": "08:30", "end": "16:30", "note": "DC"},
+              {"name": "Kieran", "start": "16:00", "end": "23:00", "note": "ST"}]},
+    {"date": "2026-11-13", "start": "18:00", "end": "23:00", "role": "Box"},
+    {"date": "2026-11-15", "start": "12:00", "end": "20:30", "role": "Bar", "note": "+",
+     "dm": [{"name": "Jack", "start": "08:30", "end": "16:30"}]},
+    {"date": "2026-11-16", "start": "08:30", "end": "16:00", "role": "Bar",
+     "dm": [{"name": "Lila", "start": "08:30", "end": "16:30"}],
+     "team": [{"name": "Grace", "start": "10:30", "end": "18:00"}]},
+    {"date": "2026-11-17", "start": "08:30", "end": "14:00", "role": "Bar",
+     "dm": [{"name": "Danny", "start": "08:00", "end": "16:00"}],
+     "team": [{"name": "Louis", "start": "14:00", "end": "22:00"}]}
+  ],
+  "days_off": [
+    {"date": "2026-11-14",
+     "dm": [{"name": "Jack", "start": "08:30", "end": "16:30"}, {"name": "Lila", "start": "15:30", "end": "23:30"}],
+     "team": [{"name": "Rich", "start": "08:30", "end": "14:00", "note": "BL"},
+              {"name": "Olivia", "start": "10:30", "end": "18:00", "note": "+", "then": {"section": "Usher", "start": "18:00", "end": "23:00"}},
+              {"name": "Jake", "start": "14:00", "end": "23:00"}],
+     "areas": {"Admin": [{"name": "Sam", "start": "09:00", "end": "17:00"}],
+               "Usher": [{"name": "Olivia", "start": "18:00", "end": "23:00"}, {"name": "Tom", "start": "11:00", "end": "19:00"}],
+               "Box": [{"name": "Priya", "start": "10:00", "end": "18:00"}, {"name": "Beth", "start": "17:00", "end": "23:00", "note": "&"}],
+               "EEAAO": [],
+               "Base": [{"name": "Kieran", "start": "16:00", "end": "23:00"}]}},
+    {"date": "2026-11-18",
+     "dm": [{"name": "Lila", "start": "08:30", "end": "16:30"}],
+     "team": [{"name": "Giovine", "start": "10:15", "end": "15:00", "note": "+"}],
+     "areas": {"Box": [{"name": "Priya", "start": "10:00", "end": "18:00"}]}}
   ],
   "meetings": [
-    {
-      "date": "2026-11-15",
-      "start": "09:00",
-      "end": "10:00",
-      "title": "Staff meeting"
-    }
+    {"date": "2026-11-14", "start": "09:00", "end": "10:00", "title": "Staff meeting"},
+    {"date": "2026-11-15", "start": "09:00", "end": "10:00", "title": "Staff meeting"},
+    {"date": "2026-11-16", "start": "09:00", "end": "10:00", "title": "Staff meeting"},
+    {"date": "2026-11-17", "start": "18:00", "end": "19:00", "title": "Staff meeting"}
   ]
 }

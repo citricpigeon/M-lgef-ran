@@ -7,6 +7,15 @@ Writes: weeks/2026-11-09.md           table of shifts, meetings and totals
         weeks/2026-11-09.events.json  ready-to-create Google Calendar events
 
 The AI only reads the photo into JSON. All the hour sums happen here, so they are always exact.
+
+Events it makes:
+  shift    purple, one per shift of Will's
+  dayoff   light green 12:00-13:00 on each day Will isn't working: DM, bar team and the rest of the building
+  meeting  blue, for staff meetings on a day off or before Will's shift starts.
+           A meeting that starts at or after the start of Will's shift goes into that shift's event instead.
+
+An event marked "hold" is missing something (for example where someone goes after a '+').
+It is never made up: the run asks Will, or a scheduled run leaves that day out until he answers.
 """
 import json
 import sys
@@ -15,6 +24,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 CONFIG = json.loads((ROOT / "config.json").read_text())
+FOOTER = "Added by rota-calendar."
 
 
 def parse_times(date, start, end):
@@ -68,84 +78,179 @@ def explain(note, drop_plus=False):
     return ", ".join(words)
 
 
+def has_plus(p):
+    return "+" in (p.get("note") or "")
+
+
 def then_text(p):
     """For a '+' shift: where the person goes next, if the rota shows it."""
     t = p.get("then")
     if t:
         return f"then {t['section']} {t['start']}–{t['end']}"
+    if has_plus(p):
+        return "then another area, not on the rota yet"
     return ""
 
 
 def person_line(p):
-    extras = [x for x in (explain(p.get("note", ""), drop_plus=bool(p.get("then"))), then_text(p)) if x]
+    extras = [x for x in (explain(p.get("note", ""), drop_plus=has_plus(p)), then_text(p)) if x]
     return f"• {p['name']} {p['start']}–{p['end']}" + (f" ({'; '.join(extras)})" if extras else "")
 
 
-def shift_description(shift, all_shifts, week_total):
-    """Event text: Will's hours, anything else he's on that day, the DM, and the bar team split into openers and closers."""
-    open_from, open_to = (to_min(t) for t in CONFIG.get("opening_start_range", ["08:00", "10:30"]))
-    close_from = to_min(CONFIG.get("closing_start_from", "14:00"))
+def missing_then(people):
+    """Names of people with '+' whose second area isn't recorded. These are asked about, never guessed."""
+    return [p["name"] for p in people if has_plus(p) and not p.get("then")]
+
+
+def dm_lines(dm):
+    if not dm:
+        return []
+    dms = sorted(dm, key=lambda d: d["start"])
+    return ["", "DM: " + " → ".join(f"{d['name']} {d['start']}–{d['end']}" for d in dms)]
+
+
+def team_lines(team, section):
+    """Bar team (or whichever section) split into openers, mids and closers."""
+    rng = CONFIG.get("opening_start_range", ["08:00", "10:30"])
+    open_from, open_to = (to_min(t) for t in rng)
+    close_at = CONFIG.get("closing_start_from", "14:00")
     openers, closers, mids = [], [], []
-    for p in sorted(shift.get("team", []), key=lambda p: p["start"]):
+    for p in sorted(team or [], key=lambda p: p["start"]):
         start = to_min(p["start"])
         if open_from <= start <= open_to:
             openers.append(person_line(p))
-        elif start >= close_from:
+        elif start >= to_min(close_at):
             closers.append(person_line(p))
         else:
             mids.append(person_line(p))
-
-    out = [f"You: {shift['start']}–{shift['end']} ({hm(shift['paid'])}) · week total {hm(week_total)}"]
-    task = explain(shift.get("note", ""), drop_plus=True)
-    if task:
-        out.append(f"Your task: {task}")
-    same_day = [s for s in all_shifts if s["date"] == shift["date"] and s is not shift]
-    if same_day:
-        for s in same_day:
-            if s["start_dt"] >= shift["end_dt"]:
-                word = "Then"
-            elif s["end_dt"] <= shift["start_dt"]:
-                word = "Before this"
-            else:
-                word = "Also today"
-            out.append(f"{word}: {s.get('role', '')} {s['start']}–{s['end']}")
-        day_total = shift["paid"] + sum(s["paid"] for s in same_day)
-        out.append(f"Day total: {hm(day_total)}")
-    elif "+" in (shift.get("note") or ""):
-        out.append("Then: somewhere else after this. Not found on the rota, so check the sheet.")
-    if shift.get("dm"):
-        dms = sorted(shift["dm"], key=lambda d: d["start"])
-        out += ["", "DM: " + " → ".join(f"{d['name']} {d['start']}–{d['end']}" for d in dms)]
-    section = (shift.get("role") or "bar").lower()
-    rng = CONFIG.get("opening_start_range", ["08:00", "10:30"])
+    out = []
     if openers:
         out += ["", f"OPENING {section} (start {rng[0]}–{rng[1]})"] + openers
     if mids:
         out += ["", "MID"] + mids
     if closers:
-        out += ["", f"CLOSING {section} (start {CONFIG.get('closing_start_from', '14:00')} or later)"] + closers
-    out += ["", "Added by rota-calendar."]
+        out += ["", f"CLOSING {section} (start {close_at} or later)"] + closers
+    return out
+
+
+def uncovered_hours(start, end, shifts):
+    """Hours of [start, end) not already inside one of Will's shifts, so time is never counted twice."""
+    mins = 0
+    t = start
+    while t < end:
+        if not any(s["start_dt"] <= t < s["end_dt"] for s in shifts):
+            mins += 1
+        t += timedelta(minutes=1)
+    return mins / 60
+
+
+def plan_meetings(week, shifts):
+    """Decide where each staff meeting goes and how many hours it adds.
+
+    - Day off: its own blue event, with just the meeting on it.
+    - Working day, meeting starts before Will's first shift: its own blue event with the meeting's times.
+    - Working day, Will is already in when it starts (or it's later in the day): written into that shift's event.
+    Meeting time counts towards the week, minus any part already inside a shift.
+    "Attend one" sessions count once, using the session that adds the least time."""
+    planned = []
+    for m in week.get("meetings", []):
+        start, end = parse_times(m["date"], m["start"], m["end"])
+        today = [s for s in shifts if s["date"] == m["date"]]
+        extra = uncovered_hours(start, end, today) if CONFIG.get("count_meetings_in_hours", True) else 0
+        if not today:
+            where = "day off"
+            host = None
+        elif start < min(s["start_dt"] for s in today):
+            where = "before shift"
+            host = None
+        else:
+            where = "in shift"
+            host = max((s for s in today if s["start_dt"] <= start), key=lambda s: s["start_dt"])
+        planned.append({**m, "start_dt": start, "end_dt": end, "where": where, "host": host, "extra": extra})
+
+    # Hours: normal meetings count in full (less overlap); attend-one groups count once
+    counted = sum(p["extra"] for p in planned if not p.get("choose_one"))
+    groups = {}
+    for p in planned:
+        if p.get("choose_one"):
+            groups.setdefault(p.get("title", "Staff meeting"), []).append(p)
+    for sessions in groups.values():
+        cheapest = min(sessions, key=lambda p: p["extra"])
+        counted += cheapest["extra"]
+        for p in sessions:
+            p["counted"] = p is cheapest
+    for p in planned:
+        p.setdefault("counted", not p.get("choose_one"))
+    return planned, counted
+
+
+def meeting_label(m):
+    return m.get("title", "Staff meeting") + (" (attend one)" if m.get("choose_one") else "")
+
+
+def meeting_in_shift_line(m, shift):
+    if m["start_dt"] >= shift["end_dt"]:
+        when = "after this shift"
+    elif m["end_dt"] <= shift["end_dt"]:
+        when = "during this shift"
+    else:
+        when = "starts during this shift"
+    return f"{meeting_label(m)}: {m['start']}–{m['end']} ({when})"
+
+
+def shift_description(shift, all_shifts, week_total, meetings):
+    """Event text: Will's hours, anything else he's on that day, meetings, the DM and the bar team."""
+    out = [f"You: {shift['start']}–{shift['end']} ({hm(shift['paid'])}) · week total {hm(week_total)}"]
+    task = explain(shift.get("note", ""), drop_plus=True)
+    if task:
+        out.append(f"Your task: {task}")
+    same_day = [s for s in all_shifts if s["date"] == shift["date"] and s is not shift]
+    mine = [m for m in meetings if m["host"] is shift]
+    out += [meeting_in_shift_line(m, shift) for m in mine]
+    for s in same_day:
+        if s["start_dt"] >= shift["end_dt"]:
+            word = "Then"
+        elif s["end_dt"] <= shift["start_dt"]:
+            word = "Before this"
+        else:
+            word = "Also today"
+        out.append(f"{word}: {s.get('role', '')} {s['start']}–{s['end']}")
+    if not same_day and has_plus(shift):
+        out.append("Then: another area after this. It isn't on the rota yet, so this day is waiting on you.")
+    day_meetings = [m for m in meetings if m["date"] == shift["date"] and m["counted"]]
+    if same_day or any(m["extra"] for m in day_meetings):
+        day_total = shift["paid"] + sum(s["paid"] for s in same_day) + sum(m["extra"] for m in day_meetings)
+        out.append(f"Day total: {hm(day_total)}")
+    out += dm_lines(shift.get("dm"))
+    out += team_lines(shift.get("team"), (shift.get("role") or "bar").lower())
+    out += ["", FOOTER]
     return "\n".join(out)
 
 
-def meeting_events(week):
-    """Staff meetings printed on the rota become their own red events, whether or not Will is working that day."""
-    events = []
-    for m in week.get("meetings", []):
-        start, end = parse_times(m["date"], m["start"], m["end"])
-        title = m.get("title", "Staff meeting") + (" (attend one)" if m.get("choose_one") else "")
-        desc = ["From the rota."]
-        if m.get("choose_one"):
-            desc.append("The rota lists more than one session. You only need to attend one.")
-        if m.get("note"):
-            desc.append(m["note"])
-        desc += ["", "Added by rota-calendar."]
-        events.append({"kind": "meeting", "summary": title, "start_dt": start, "end_dt": end,
-                       "colorId": CONFIG.get("meeting_color_id", "11"), "description": "\n".join(desc)})
-    return events
+def dayoff_description(day, meetings):
+    """Day-off event text: who's DM, the bar team, and everyone else in the building with their times."""
+    out = ["Day off. This isn't a shift and isn't counted in your hours."]
+    for m in meetings:
+        if m["date"] == day["date"]:
+            out.append(f"{meeting_label(m)}: {m['start']}–{m['end']} (see the blue event)")
+    out += dm_lines(day.get("dm"))
+    out += team_lines(day.get("team"), CONFIG.get("day_off_event", {}).get("section", "bar"))
+    areas = {k: v for k, v in (day.get("areas") or {}).items() if v}
+    if areas:
+        out += ["", "ELSEWHERE IN THE BUILDING"]
+        for area, people in areas.items():
+            out.append(area)
+            out += [person_line(p) for p in sorted(people, key=lambda p: p["start"])]
+    out += ["", FOOTER]
+    return "\n".join(out)
 
 
-def table(week, shifts, meetings):
+def week_dates(week):
+    first = datetime.strptime(week["week_commencing"], "%Y-%m-%d")
+    return [(first + timedelta(days=i)).strftime("%Y-%m-%d") for i in range(7)]
+
+
+def table(week, shifts, meetings, week_total, days_off, holds):
     # Hours are clock-on to clock-off. Break columns only appear if break rules are switched on in config.
     breaks = bool(CONFIG.get("unpaid_break_rules"))
     head = "| Day | Date | Start | End | Role | Hours | Task |" + (" Unpaid break | Paid hours |" if breaks else "")
@@ -164,13 +269,32 @@ def table(week, shifts, meetings):
         if breaks:
             row += f" {s['unpaid_break_min']}m | {hm(s['paid'])} |"
         rows.append(row)
-    total_len = sum(s["length"] for s in shifts)
-    total_paid = sum(s["paid"] for s in shifts)
-    total = f"**{len(shifts)} shifts - {hm(total_len)}**" if not breaks else f"**{len(shifts)} shifts - {hm(total_len)} on site - {hm(total_paid)} paid**"
+    meeting_hours = sum(m["extra"] for m in meetings if m["counted"])
+    total_len = sum(s["length"] for s in shifts) + meeting_hours
+    total_paid = week_total
+    label = f"{len(shifts)} shifts"
+    if meeting_hours:
+        label += f" + staff meetings ({hm(meeting_hours)})"
+    total = f"**{label} - {hm(total_len)}**" if not breaks else f"**{label} - {hm(total_len)} on site - {hm(total_paid)} paid**"
     rows += ["", total]
     if meetings:
         rows += ["", "### Staff meetings", ""]
-        rows += [f"- {m['start_dt']:%a %d %b} {m['start_dt']:%H:%M}–{m['end_dt']:%H:%M}: {m['summary']}" for m in meetings]
+        for m in meetings:
+            where = {"day off": "own blue event (day off)", "before shift": "own blue event (before your shift)",
+                     "in shift": "in your shift's event"}[m["where"]]
+            if not m["counted"]:
+                count = "not counted (another session is)"
+            elif m["extra"]:
+                count = f"adds {hm(m['extra'])}"
+            else:
+                count = "inside your shift, no extra hours"
+            rows.append(f"- {m['start_dt']:%a %d %b} {m['start']}–{m['end']}: {meeting_label(m)} · {where} · {count}")
+    if days_off:
+        rows += ["", "### Days off", ""]
+        rows += [f"- {datetime.strptime(d, '%Y-%m-%d'):%a %d %b}" for d in days_off]
+    if holds:
+        rows += ["", "### Waiting on you", ""]
+        rows += [f"- {datetime.strptime(d, '%Y-%m-%d'):%a %d %b}: {'; '.join(r)}" for d, r in sorted(holds.items())]
     return "\n".join(rows) + "\n"
 
 
@@ -204,33 +328,76 @@ def main(path):
     path = Path(path)
     week = json.loads(path.read_text())
     shifts = sorted((parse_shift(s) for s in week["shifts"]), key=lambda s: s["start_dt"])
-    week_total = sum(s["paid"] for s in shifts)
-    shift_events = [
-        {
+    meetings, meeting_hours = plan_meetings(week, shifts)
+    week_total = sum(s["paid"] for s in shifts) + meeting_hours
+
+    # Anything missing is held and asked about, never guessed
+    holds = {}
+    for s in shifts:
+        if has_plus(s) and not any(o["date"] == s["date"] and o is not s for o in shifts):
+            holds.setdefault(s["date"], []).append("where you go after your '+' shift")
+        names = missing_then(s.get("team") or [])
+        if names:
+            holds.setdefault(s["date"], []).append("second area after '+' for " + ", ".join(names))
+
+    worked = {s["date"] for s in shifts}
+    days_off = [d for d in week_dates(week) if d not in worked]
+    recorded = {d["date"]: d for d in week.get("days_off", [])}
+    cfg = {"title": "Day off – who's in", "start": "12:00", "end": "13:00", "color_id": "2", **CONFIG.get("day_off_event", {})}
+
+    events = []
+    for s in shifts:
+        events.append({
             "kind": "shift",
             "summary": CONFIG.get("event_title", "Work shift") + (f" – {s['role']}" if s.get("role") else ""),
-            "start_dt": s["start_dt"],
-            "end_dt": s["end_dt"],
+            "start_dt": s["start_dt"], "end_dt": s["end_dt"],
             "colorId": CONFIG.get("google_color_id", "3"),
-            "description": shift_description(s, shifts, week_total),
-        }
-        for s in shifts
-    ]
-    meetings = meeting_events(week)
-    events = sorted(shift_events + meetings, key=lambda e: e["start_dt"])
+            "description": shift_description(s, shifts, week_total, meetings),
+        })
+    for d in days_off:
+        day = recorded.get(d, {"date": d})
+        if d not in recorded:
+            holds.setdefault(d, []).append("who's in wasn't read from the rota for this day off")
+        names = missing_then((day.get("team") or []) + [p for ps in (day.get("areas") or {}).values() for p in ps])
+        if names:
+            holds.setdefault(d, []).append("second area after '+' for " + ", ".join(names))
+        start, end = parse_times(d, cfg["start"], cfg["end"])
+        events.append({"kind": "dayoff", "summary": cfg["title"], "start_dt": start, "end_dt": end,
+                       "colorId": cfg["color_id"], "description": dayoff_description(day, meetings)})
+    for m in meetings:
+        if m["where"] == "in shift":
+            continue
+        desc = [] if m["where"] == "day off" else [f"{m['start']}–{m['end']}, before your shift."]
+        if m.get("choose_one"):
+            desc.append("The rota lists more than one session. You only need to attend one.")
+        if m.get("note"):
+            desc.append(m["note"])
+        desc += ([""] if desc else []) + [FOOTER]
+        events.append({"kind": "meeting", "summary": meeting_label(m), "start_dt": m["start_dt"], "end_dt": m["end_dt"],
+                       "colorId": CONFIG.get("meeting_color_id", "9"), "description": "\n".join(desc)})
 
-    path.with_suffix(".md").write_text(table(week, shifts, meetings))
-    path.with_suffix(".ics").write_text(ics(events))
-    path.with_suffix(".events.json").write_text(json.dumps([
-        {"kind": e["kind"], "summary": e["summary"],
-         "start": f"{e['start_dt']:%Y-%m-%dT%H:%M:%S}", "end": f"{e['end_dt']:%Y-%m-%dT%H:%M:%S}",
-         "colorId": e["colorId"], "location": CONFIG.get("location", ""), "description": e["description"]}
-        for e in events
-    ], indent=2, ensure_ascii=False))
+    for e in events:
+        held = holds.get(f"{e['start_dt']:%Y-%m-%d}") if e["kind"] != "meeting" else None
+        if held:
+            e["hold"] = "; ".join(held)
+    events.sort(key=lambda e: e["start_dt"])
+
+    path.with_suffix(".md").write_text(table(week, shifts, meetings, week_total, days_off, holds))
+    path.with_suffix(".ics").write_text(ics([e for e in events if not e.get("hold")]))
+    out = []
+    for e in events:
+        item = {"kind": e["kind"], "summary": e["summary"],
+                "start": f"{e['start_dt']:%Y-%m-%dT%H:%M:%S}", "end": f"{e['end_dt']:%Y-%m-%dT%H:%M:%S}",
+                "colorId": e["colorId"], "location": CONFIG.get("location", ""), "description": e["description"]}
+        if e.get("hold"):
+            item["hold"] = e["hold"]
+        out.append(item)
+    path.with_suffix(".events.json").write_text(json.dumps(out, indent=2, ensure_ascii=False))
 
     print(path.with_suffix(".md").read_text())
     for e in events:
-        print(f"--- {e['kind']} {e['start_dt']:%Y-%m-%d %H:%M} · colour {e['colorId']} ---\n{e['description']}\n")
+        flag = f" · HELD: {e['hold']}" if e.get("hold") else ""
+        print(f"--- {e['kind']} {e['start_dt']:%Y-%m-%d %H:%M} · colour {e['colorId']}{flag} ---\n{e['description']}\n")
     print(f"Wrote {path.with_suffix('.md')}, {path.with_suffix('.ics')} and {path.with_suffix('.events.json')}")
 
 

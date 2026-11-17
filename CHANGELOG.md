@@ -108,3 +108,12 @@ Updates that changed how the system works get a post on Searu (code `mg`). Quest
 **Asked:** It is November. I'll give each week, so it should keep progressing in order.
 **Changed:** `RUNBOOK.md` now treats the weeks as arriving in order. When no month is printed, the new week is the one that follows the most recent week in `weeks/`, and the run takes that without asking. It only asks (on-command) or skips and flags (scheduled) when the printed Friday doesn't follow on, for example a gap or a repeat. Scheduled runs can now calendar a monthless sheet that follows on, instead of stopping.
 **Searu:** mg-15
+
+## U19 · Feature · 17 Nov 2026, 16:37
+**Asked:** On days I'm not working, add a pretend shift from 12:00 to 13:00 in light green. It should show who's DM all day, who's on bar, and who else is in the building and when. Working days stay as they are. Staff meetings become blue: plain on a day off, folded into my shift if I'm already in, or their own event with times if they're before my shift. If someone's area after "+" isn't on the rota, don't make it up — ask.
+**Changed:**
+- **Days off:** the week file gains `days_off` (DM, bar `team` and every other section under `areas`). `rota.py` makes a **"Day off – who's in"** event, 12:00–13:00, Google colour 2 (Sage). It shows as busy, has no reminder and isn't counted in the hours. The bar team is split into openers, mids and closers like a shift; everyone else is listed by area with their times. People on "+" show in both areas.
+- **Staff meetings:** now Google colour 9 (Blueberry) instead of red. On a day off they're their own event with nothing else on them. If one starts before Will's first shift, it's its own event with its times. If he's already in when it starts, or it's later that day, it's written into that shift's event instead of being a separate event. Meeting time now counts towards the week (less any overlap with a shift); "attend one" sessions count once.
+- **Nothing made up:** a "+" with no second area on the sheet, or a day off whose staff weren't read, marks that day's events as **held**. On-command runs ask; scheduled runs add everything else and leave the held day out until Will answers.
+- Tested on a made-up week covering every case (`weeks/example.json`). The real shift events for w/c 6 Nov and 13 Nov come out identical to before.
+**Searu:** mg-16

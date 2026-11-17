@@ -6,7 +6,7 @@
     "end": "2026-11-13T18:00:00",
     "colorId": "3",
     "location": "",
-    "description": "You: 10:30–18:00 (7h 30m) · week total 21h 00m\nThen: Box 18:00–23:00\nDay total: 12h 30m\n\nDM: Jack 08:30–16:30 → Lila 16:00–23:00\n\nOPENING bar (start 08:00–10:30)\n• Richard 08:30–16:30 (DC – deep clean)\n• Gracie 10:30–18:30 (then Box 18:30–22:00)\n\nCLOSING bar (start 14:00 or later)\n• Kieran 16:00–23:00 (ST – meaning not known yet)\n\nAdded by rota-calendar."
+    "description": "You: 10:30–18:00 (7h 30m) · week total 37h 00m\nThen: Box 18:00–23:00\nDay total: 12h 30m\n\nDM: Jack 08:30–16:30 → Lila 16:00–23:00\n\nOPENING bar (start 08:00–10:30)\n• Richard 08:30–16:30 (DC – deep clean)\n• Gracie 10:30–18:30 (then Box 18:30–22:00)\n\nCLOSING bar (start 14:00 or later)\n• Kieran 16:00–23:00 (ST – meaning not known yet)\n\nAdded by rota-calendar."
   },
   {
     "kind": "shift",
@@ -15,16 +15,34 @@
     "end": "2026-11-13T23:00:00",
     "colorId": "3",
     "location": "",
-    "description": "You: 18:00–23:00 (5h 00m) · week total 21h 00m\nBefore this: Bar 10:30–18:00\nDay total: 12h 30m\n\nAdded by rota-calendar."
+    "description": "You: 18:00–23:00 (5h 00m) · week total 37h 00m\nBefore this: Bar 10:30–18:00\nDay total: 12h 30m\n\nAdded by rota-calendar."
+  },
+  {
+    "kind": "meeting",
+    "summary": "Staff meeting",
+    "start": "2026-11-14T09:00:00",
+    "end": "2026-11-14T10:00:00",
+    "colorId": "9",
+    "location": "",
+    "description": "Added by rota-calendar."
+  },
+  {
+    "kind": "dayoff",
+    "summary": "Day off – who's in",
+    "start": "2026-11-14T12:00:00",
+    "end": "2026-11-14T13:00:00",
+    "colorId": "2",
+    "location": "",
+    "description": "Day off. This isn't a shift and isn't counted in your hours.\nStaff meeting: 09:00–10:00 (see the blue event)\n\nDM: Jack 08:30–16:30 → Lila 15:30–23:30\n\nOPENING bar (start 08:00–10:30)\n• Rich 08:30–14:00 (BL – beer lines)\n• Olivia 10:30–18:00 (then Usher 18:00–23:00)\n\nCLOSING bar (start 14:00 or later)\n• Jake 14:00–23:00\n\nELSEWHERE IN THE BUILDING\nAdmin\n• Sam 09:00–17:00\nUsher\n• Tom 11:00–19:00\n• Olivia 18:00–23:00\nBox\n• Priya 10:00–18:00\n• Beth 17:00–23:00 (& – meaning not known yet)\nBase\n• Kieran 16:00–23:00\n\nAdded by rota-calendar."
   },
   {
     "kind": "meeting",
     "summary": "Staff meeting",
     "start": "2026-11-15T09:00:00",
     "end": "2026-11-15T10:00:00",
-    "colorId": "11",
+    "colorId": "9",
     "location": "",
-    "description": "From the rota.\n\nAdded by rota-calendar."
+    "description": "09:00–10:00, before your shift.\n\nAdded by rota-calendar."
   },
   {
     "kind": "shift",
@@ -33,6 +51,45 @@
     "end": "2026-11-15T20:30:00",
     "colorId": "3",
     "location": "",
-    "description": "You: 12:00–20:30 (8h 30m) · week total 21h 00m\nThen: somewhere else after this. Not found on the rota, so check the sheet.\n\nAdded by rota-calendar."
+    "description": "You: 12:00–20:30 (8h 30m) · week total 37h 00m\nThen: another area after this. It isn't on the rota yet, so this day is waiting on you.\nDay total: 9h 30m\n\nDM: Jack 08:30–16:30\n\nAdded by rota-calendar.",
+    "hold": "where you go after your '+' shift"
+  },
+  {
+    "kind": "shift",
+    "summary": "Picture House shift – Bar",
+    "start": "2026-11-16T08:30:00",
+    "end": "2026-11-16T16:00:00",
+    "colorId": "3",
+    "location": "",
+    "description": "You: 08:30–16:00 (7h 30m) · week total 37h 00m\nStaff meeting: 09:00–10:00 (during this shift)\n\nDM: Lila 08:30–16:30\n\nOPENING bar (start 08:00–10:30)\n• Grace 10:30–18:00\n\nAdded by rota-calendar."
+  },
+  {
+    "kind": "shift",
+    "summary": "Picture House shift – Bar",
+    "start": "2026-11-17T08:30:00",
+    "end": "2026-11-17T14:00:00",
+    "colorId": "3",
+    "location": "",
+    "description": "You: 08:30–14:00 (5h 30m) · week total 37h 00m\nStaff meeting: 18:00–19:00 (after this shift)\nDay total: 6h 30m\n\nDM: Danny 08:00–16:00\n\nCLOSING bar (start 14:00 or later)\n• Louis 14:00–22:00\n\nAdded by rota-calendar."
+  },
+  {
+    "kind": "dayoff",
+    "summary": "Day off – who's in",
+    "start": "2026-11-18T12:00:00",
+    "end": "2026-11-18T13:00:00",
+    "colorId": "2",
+    "location": "",
+    "description": "Day off. This isn't a shift and isn't counted in your hours.\n\nDM: Lila 08:30–16:30\n\nOPENING bar (start 08:00–10:30)\n• Giovine 10:15–15:00 (then another area, not on the rota yet)\n\nELSEWHERE IN THE BUILDING\nBox\n• Priya 10:00–18:00\n\nAdded by rota-calendar.",
+    "hold": "second area after '+' for Giovine"
+  },
+  {
+    "kind": "dayoff",
+    "summary": "Day off – who's in",
+    "start": "2026-11-19T12:00:00",
+    "end": "2026-11-19T13:00:00",
+    "colorId": "2",
+    "location": "",
+    "description": "Day off. This isn't a shift and isn't counted in your hours.\n\nAdded by rota-calendar.",
+    "hold": "who's in wasn't read from the rota for this day off"
   }
 ]

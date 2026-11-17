@@ -4,34 +4,58 @@ PRODID:-//rota-calendar//EN
 CALSCALE:GREGORIAN
 BEGIN:VEVENT
 UID:20261113T1030-shift-rota-calendar@will
-DTSTAMP:20261101T181915Z
+DTSTAMP:20261117T165109Z
 DTSTART;TZID=Europe/London:20261113T103000
 DTEND;TZID=Europe/London:20261113T180000
 SUMMARY:Picture House shift – Bar
-DESCRIPTION:You: 10:30–18:00 (7h 30m) · week total 21h 00m\nThen: Box 18:00–23:00\nDay total: 12h 30m\n\nDM: Jack 08:30–16:30 → Lila 16:00–23:00\n\nOPENING bar (start 08:00–10:30)\n• Richard 08:30–16:30 (DC – deep clean)\n• Gracie 10:30–18:30 (then Box 18:30–22:00)\n\nCLOSING bar (start 14:00 or later)\n• Kieran 16:00–23:00 (ST – meaning not known yet)\n\nAdded by rota-calendar.
+DESCRIPTION:You: 10:30–18:00 (7h 30m) · week total 37h 00m\nThen: Box 18:00–23:00\nDay total: 12h 30m\n\nDM: Jack 08:30–16:30 → Lila 16:00–23:00\n\nOPENING bar (start 08:00–10:30)\n• Richard 08:30–16:30 (DC – deep clean)\n• Gracie 10:30–18:30 (then Box 18:30–22:00)\n\nCLOSING bar (start 14:00 or later)\n• Kieran 16:00–23:00 (ST – meaning not known yet)\n\nAdded by rota-calendar.
 END:VEVENT
 BEGIN:VEVENT
 UID:20261113T1800-shift-rota-calendar@will
-DTSTAMP:20261101T181915Z
+DTSTAMP:20261117T165109Z
 DTSTART;TZID=Europe/London:20261113T180000
 DTEND;TZID=Europe/London:20261113T230000
 SUMMARY:Picture House shift – Box
-DESCRIPTION:You: 18:00–23:00 (5h 00m) · week total 21h 00m\nBefore this: Bar 10:30–18:00\nDay total: 12h 30m\n\nAdded by rota-calendar.
+DESCRIPTION:You: 18:00–23:00 (5h 00m) · week total 37h 00m\nBefore this: Bar 10:30–18:00\nDay total: 12h 30m\n\nAdded by rota-calendar.
+END:VEVENT
+BEGIN:VEVENT
+UID:20261114T0900-meeting-rota-calendar@will
+DTSTAMP:20261117T165109Z
+DTSTART;TZID=Europe/London:20261114T090000
+DTEND;TZID=Europe/London:20261114T100000
+SUMMARY:Staff meeting
+DESCRIPTION:Added by rota-calendar.
+END:VEVENT
+BEGIN:VEVENT
+UID:20261114T1200-dayoff-rota-calendar@will
+DTSTAMP:20261117T165109Z
+DTSTART;TZID=Europe/London:20261114T120000
+DTEND;TZID=Europe/London:20261114T130000
+SUMMARY:Day off – who's in
+DESCRIPTION:Day off. This isn't a shift and isn't counted in your hours.\nStaff meeting: 09:00–10:00 (see the blue event)\n\nDM: Jack 08:30–16:30 → Lila 15:30–23:30\n\nOPENING bar (start 08:00–10:30)\n• Rich 08:30–14:00 (BL – beer lines)\n• Olivia 10:30–18:00 (then Usher 18:00–23:00)\n\nCLOSING bar (start 14:00 or later)\n• Jake 14:00–23:00\n\nELSEWHERE IN THE BUILDING\nAdmin\n• Sam 09:00–17:00\nUsher\n• Tom 11:00–19:00\n• Olivia 18:00–23:00\nBox\n• Priya 10:00–18:00\n• Beth 17:00–23:00 (& – meaning not known yet)\nBase\n• Kieran 16:00–23:00\n\nAdded by rota-calendar.
 END:VEVENT
 BEGIN:VEVENT
 UID:20261115T0900-meeting-rota-calendar@will
-DTSTAMP:20261101T181915Z
+DTSTAMP:20261117T165109Z
 DTSTART;TZID=Europe/London:20261115T090000
 DTEND;TZID=Europe/London:20261115T100000
 SUMMARY:Staff meeting
-DESCRIPTION:From the rota.\n\nAdded by rota-calendar.
+DESCRIPTION:09:00–10:00\, before your shift.\n\nAdded by rota-calendar.
 END:VEVENT
 BEGIN:VEVENT
-UID:20261115T1200-shift-rota-calendar@will
-DTSTAMP:20261101T181915Z
-DTSTART;TZID=Europe/London:20261115T120000
-DTEND;TZID=Europe/London:20261115T203000
+UID:20261116T0830-shift-rota-calendar@will
+DTSTAMP:20261117T165109Z
+DTSTART;TZID=Europe/London:20261116T083000
+DTEND;TZID=Europe/London:20261116T160000
 SUMMARY:Picture House shift – Bar
-DESCRIPTION:You: 12:00–20:30 (8h 30m) · week total 21h 00m\nThen: somewhere else after this. Not found on the rota\, so check the sheet.\n\nAdded by rota-calendar.
+DESCRIPTION:You: 08:30–16:00 (7h 30m) · week total 37h 00m\nStaff meeting: 09:00–10:00 (during this shift)\n\nDM: Lila 08:30–16:30\n\nOPENING bar (start 08:00–10:30)\n• Grace 10:30–18:00\n\nAdded by rota-calendar.
+END:VEVENT
+BEGIN:VEVENT
+UID:20261117T0830-shift-rota-calendar@will
+DTSTAMP:20261117T165109Z
+DTSTART;TZID=Europe/London:20261117T083000
+DTEND;TZID=Europe/London:20261117T140000
+SUMMARY:Picture House shift – Bar
+DESCRIPTION:You: 08:30–14:00 (5h 30m) · week total 37h 00m\nStaff meeting: 18:00–19:00 (after this shift)\nDay total: 6h 30m\n\nDM: Danny 08:00–16:00\n\nCLOSING bar (start 14:00 or later)\n• Louis 14:00–22:00\n\nAdded by rota-calendar.
 END:VEVENT
 END:VCALENDAR

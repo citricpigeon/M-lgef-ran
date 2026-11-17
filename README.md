@@ -15,6 +15,7 @@ Mālgefēran does it for me:
 5. **It builds the outputs:**
    - a table of my shifts and the week's hours
    - a purple Google Calendar event for each shift, showing the duty manager and who's opening and closing the bar
+   - a light green **"Day off – who's in"** event (12:00–13:00) on each day I'm not working, showing the DM, the bar team and everyone else in the building with their times. It isn't counted in my hours.
    - an `.ics` file that works in any other calendar (Apple, Outlook)
 6. **It saves the week** to this repo, so there's a running record of every rota.
 7. **It goes dormant.** Nothing runs between photos.
@@ -90,7 +91,8 @@ Found by testing on 18 real rotas:
   | ST | **Not known yet.** Neither of us knows; I'm finding out. Shown as "meaning not known yet". |
   | `&` | Not confirmed yet |
 
-- **Staff meetings** printed on the rota become their own **red** events (Google's Tomato) at the time shown, whether or not I'm working that day. If the rota says "attend one", each session is added and marked "(attend one)".
+- **Staff meetings** count towards my hours. On a day off, or before my shift starts, they're their own **blue** event (Google's Blueberry). If I'm already in when one starts, it's written into that shift's event instead. If the rota says "attend one", each session is marked "(attend one)" and only one counts.
+- **Missing information is never made up.** If someone's area after a "+" isn't on the sheet, that day waits until I answer.
 - **Camera RAW (DNG) files** can be read through their built-in preview, but JPG or HEIC is better.
 
 ## Settings (`config.json`)
@@ -103,7 +105,8 @@ Found by testing on 18 real rotas:
 | Closers | Start 14:00 or later |
 | Hours | Clock-on to clock-off (breaks don't matter) |
 | Codes | SR, DC, BL and + written out in full; ST and & not known yet |
-| Staff meetings | Own event, Google colour 11 (Tomato, red) |
+| Staff meetings | Google colour 9 (Blueberry, blue), counted in hours |
+| Days off | "Day off – who's in", 12:00–13:00, Google colour 2 (Sage, light green), busy, not counted |
 
 ## Status
 

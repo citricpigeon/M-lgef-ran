@@ -41,29 +41,47 @@ Write `weeks/<Friday YYYY-MM-DD>.json`:
 
 - **`team`** is everyone else in **Will's section** that day. That's normally Bar.
 - **`dm`** is that day's DM-section shifts.
+- **Days off:** for every day in the Fri–Thu week that Will isn't working, add an entry to `"days_off"` with that day's `dm`, the bar `team`, and every other section under `areas`, top to bottom as printed (Admin, Usher, Box, EEAAO, Base):
+
+  ```json
+  "days_off": [
+    {"date": "2026-11-16",
+     "dm":   [{"name": "Lila", "start": "08:30", "end": "16:30"}],
+     "team": [{"name": "Grace", "start": "10:30", "end": "18:00", "note": "+", "then": {"section": "Usher", "start": "18:00", "end": "23:00"}}],
+     "areas": {"Admin": [], "Usher": [{"name": "Grace", "start": "18:00", "end": "23:00"}], "Box": [], "EEAAO": [], "Base": []}}
+  ]
+  ```
+
+  `rota.py` turns each one into a light green (Sage) **"Day off – who's in"** event, 12:00–13:00, shown as busy and not counted in Will's hours.
 - **"+" after a time** means the person carries on in another area afterwards (for example 10:30–18:00+ on Bar, then 18:00–23:00 on Box or Usher). Find that person's other shift on the same day:
   - **For Will:** add it as its own shift in `shifts` (with its own `role`). `rota.py` links the two and shows a day total. If you can't find the second part, keep the "+" and flag it.
-  - **For a team member:** add `"then": {"section": "Box", "start": "18:00", "end": "23:00"}` to their entry.
-- **Staff meetings** printed anywhere on the sheet go in `"meetings": [{"date", "start", "end", "title": "Staff meeting"}]`, whether or not Will is working that day. If the rota says to attend one of several sessions, add every session with `"choose_one": true`. `rota.py` makes each one a **red** event (`colorId` 11, Tomato).
+  - **For a team member** (on a working day or a day off): add `"then": {"section": "Box", "start": "18:00", "end": "23:00"}` to their entry, and list them in that second area too.
+  - **Never guess the second area.** If it isn't on the sheet, leave `then` out. `rota.py` marks that day's events as **held** and lists them under "Waiting on you". On-command runs ask Will, add his answer, and run `rota.py` again. Scheduled runs write everything else and leave held events out until Will answers.
+- **Staff meetings** printed anywhere on the sheet go in `"meetings": [{"date", "start", "end", "title": "Staff meeting"}]`, whether or not Will is working that day. If the rota says to attend one of several sessions, add every session with `"choose_one": true`. `rota.py` decides where each goes:
+  - **Day off:** its own **blue** event (`colorId` 9, Blueberry), with nothing on it but the meeting.
+  - **Working day, meeting starts before Will's first shift:** its own blue event with the meeting's times, then the shift as normal.
+  - **Working day, Will is already in when it starts (or it's later that day):** no separate event. It's written into that shift's event ("during this shift" or "after this shift").
+  - **Hours:** meeting time counts towards the week, minus anything already inside a shift. "Attend one" sessions count once.
 - **`note`** holds codes such as SR, DC, BL or "+". Don't change times because of a code. `rota.py` writes out known codes from `config.json` (SR = stock rotate, DC = deep clean, BL = beer lines). Unknown codes are kept as printed and flagged in the report. If Will has a code on his own shift, it shows on his event as "Your task".
 
 Then run `python3 rota.py weeks/<file>.json`. It writes `.md` (the table), `.ics` and `.events.json`.
 
 ## 4. Check before writing to the calendar
 
-- **Only shifts that haven't ended yet** go in the calendar. Past weeks are saved with status `history`.
+- **Only events that haven't ended yet** go in the calendar. Past weeks are saved with status `history`.
 - **Check for duplicates:** list Google Calendar events for those dates and look for "Added by rota-calendar" in the description. Update a matching event instead of creating a new one.
 - **Note clashes** with existing events. Don't move anything.
-- **On-command runs:** show Will the table and the events, and wait for a yes.
-- **Scheduled runs:** write only if every one of Will's shifts was read clearly and the dates are certain. Otherwise write nothing and explain why.
+- **Held events** (a `hold` field in `.events.json`) are missing something from the sheet. Never fill the gap yourself.
+- **On-command runs:** show Will the table and the events, ask about anything held, and wait for a yes.
+- **Scheduled runs:** write only if the dates are certain. Skip held events and list what each one is waiting on in the report. If a shift of Will's itself couldn't be read clearly, write nothing and explain why.
 
 ## 5. Write to the calendar
 
-For each entry in `.events.json` (shifts and staff meetings), create the event on the primary calendar with:
+For each entry in `.events.json` (shifts, days off and staff meetings) **without a `hold`**, create the event on the primary calendar with:
 
-- `summary`: copied from the entry (for example "Picture House shift – Bar" or "Staff meeting")
+- `summary`: copied from the entry (for example "Picture House shift – Bar", "Day off – who's in" or "Staff meeting")
 - `startTime` and `endTime`: local time, no timezone offset
-- `colorId`: copied from the entry ("3" Grape for shifts, "11" Tomato for meetings)
+- `colorId`: copied from the entry ("3" Grape for shifts, "2" Sage for days off, "9" Blueberry for meetings)
 - `description`: copied exactly from `.events.json`
 - `notificationLevel`: "NONE"
 - the default reminders
