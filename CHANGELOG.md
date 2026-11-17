@@ -122,3 +122,12 @@ Updates that changed how the system works get a post on Searu (code `mg`). Quest
 **Asked:** Re-read this week's rota and add the new day-off event to my days off, including Monday 16th.
 **Changed:** The Admin row on the sheet sometimes has names with no times (Cath on Mon 16, Cath and Rich on Tue 17). Day-off events used to need a time for everyone and would crash. `rota.py` now shows these people as "no times printed" rather than making times up. Other events come out the same as before.
 **Searu:** mg-17
+
+## U21 · Feature · 17 Nov 2026, 17:09
+**Asked:** Ignore the Base row for now, as I don't know what it is. No idea what "&" means either. If no times are printed, don't show any. Just show them as in, at any time.
+**Changed:**
+- **Base left out:** new `ignore_areas` setting in `config.json` (set to Base). Ignored sections don't appear on day-off events and a "+" in them never holds a day. The runbook says not to record Base for now.
+- **No times printed:** the person is shown by name alone (replacing U20's "no times printed"), meaning they could be in at any time. Times are still never made up.
+- **"&":** still unknown. `config.json` notes that Will doesn't know either.
+- This week's Mon 16 and Tue 17 day-off events were updated to match. Every shift event comes out the same as before.
+**Searu:** mg-18

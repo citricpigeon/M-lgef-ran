@@ -1,6 +1,6 @@
 {
  "week_commencing": "2026-11-13",
- "source": "Drive fc9344bb-1f7e-4927-a281-748fc0f7b920.jpg (NOV and 2026 printed. Name printed as 'Will' on Fri/Sat/Wed/Thu and 'William' on Sun; 'Will' confirmed as Will by Will before calendaring. Names shortened this week, e.g. Rich for Richard. Lottie Fri printed 16:00=23:00). Days off (Mon 16, Tue 17) read on 17 Nov: Admin printed with names only, no times; Base 'Ben 2-3+' read as 14:00–15:00 then Bar 15:00–22:00 (the '& Ben' bar shift)",
+ "source": "Drive fc9344bb-1f7e-4927-a281-748fc0f7b920.jpg (NOV and 2026 printed. Name printed as 'Will' on Fri/Sat/Wed/Thu and 'William' on Sun; 'Will' confirmed as Will by Will before calendaring. Names shortened this week, e.g. Rich for Richard. Lottie Fri printed 16:00=23:00). Days off (Mon 16, Tue 17) read on 17 Nov: Admin printed with names only, no times; Base row ignored (Will doesn't know what it is yet)",
  "shifts": [
   {
    "date": "2026-11-13",
@@ -306,19 +306,7 @@
      }
     ],
     "EEAAO": [],
-    "Base": [
-     {
-      "name": "Ben",
-      "start": "14:00",
-      "end": "15:00",
-      "note": "+",
-      "then": {
-       "section": "Bar",
-       "start": "15:00",
-       "end": "22:00"
-      }
-     }
-    ]
+    "Base": []
    }
   },
   {
@@ -392,19 +380,7 @@
      }
     ],
     "EEAAO": [],
-    "Base": [
-     {
-      "name": "Ben",
-      "start": "14:00",
-      "end": "15:00",
-      "note": "+",
-      "then": {
-       "section": "Bar",
-       "start": "15:00",
-       "end": "22:00"
-      }
-     }
-    ]
+    "Base": []
    }
   }
  ]

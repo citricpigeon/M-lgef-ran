@@ -24,6 +24,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 CONFIG = json.loads((ROOT / "config.json").read_text())
+IGNORED_AREAS = set(CONFIG.get("ignore_areas", []))  # sections left off events until Will knows what they are
 FOOTER = "Added by rota-calendar."
 
 
@@ -94,8 +95,8 @@ def then_text(p):
 
 def person_line(p):
     extras = [x for x in (explain(p.get("note", ""), drop_plus=has_plus(p)), then_text(p)) if x]
-    times = f"{p['start']}–{p['end']}" if p.get("start") and p.get("end") else "no times printed"
-    return f"• {p['name']} {times}" + (f" ({'; '.join(extras)})" if extras else "")
+    times = f" {p['start']}–{p['end']}" if p.get("start") and p.get("end") else ""
+    return f"• {p['name']}{times}" + (f" ({'; '.join(extras)})" if extras else "")
 
 
 def missing_then(people):
@@ -236,7 +237,7 @@ def dayoff_description(day, meetings):
             out.append(f"{meeting_label(m)}: {m['start']}–{m['end']} (see the blue event)")
     out += dm_lines(day.get("dm"))
     out += team_lines(day.get("team"), CONFIG.get("day_off_event", {}).get("section", "bar"))
-    areas = {k: v for k, v in (day.get("areas") or {}).items() if v}
+    areas = {k: v for k, v in (day.get("areas") or {}).items() if v and k not in IGNORED_AREAS}
     if areas:
         out += ["", "ELSEWHERE IN THE BUILDING"]
         for area, people in areas.items():
@@ -359,7 +360,7 @@ def main(path):
         day = recorded.get(d, {"date": d})
         if d not in recorded:
             holds.setdefault(d, []).append("who's in wasn't read from the rota for this day off")
-        names = missing_then((day.get("team") or []) + [p for ps in (day.get("areas") or {}).values() for p in ps])
+        names = missing_then((day.get("team") or []) + [p for a, ps in (day.get("areas") or {}).items() if a not in IGNORED_AREAS for p in ps])
         if names:
             holds.setdefault(d, []).append("second area after '+' for " + ", ".join(names))
         start, end = parse_times(d, cfg["start"], cfg["end"])

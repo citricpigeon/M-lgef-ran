@@ -33,7 +33,7 @@
     "end": "2026-11-16T13:00:00",
     "colorId": "2",
     "location": "",
-    "description": "Day off. This isn't a shift and isn't counted in your hours.\n\nDM: Jack 08:30–16:30 → Cath 15:00–23:00\n\nOPENING bar (start 08:00–10:30)\n• Olivia 08:30–16:30 (DC – deep clean)\n• Myles 08:30–15:00 (DC – deep clean)\n• Gracie 10:30–18:30\n\nMID\n• Rich 12:00–21:00\n\nCLOSING bar (start 14:00 or later)\n• Ben 15:00–22:00 (& – meaning not known yet)\n• Louis 16:30–22:00\n\nELSEWHERE IN THE BUILDING\nAdmin\n• Cath no times printed\nUsher\n• Lottie 11:45–23:00\nBox\n• Beth 11:30–21:00\nBase\n• Ben 14:00–15:00 (then Bar 15:00–22:00)\n\nAdded by rota-calendar."
+    "description": "Day off. This isn't a shift and isn't counted in your hours.\n\nDM: Jack 08:30–16:30 → Cath 15:00–23:00\n\nOPENING bar (start 08:00–10:30)\n• Olivia 08:30–16:30 (DC – deep clean)\n• Myles 08:30–15:00 (DC – deep clean)\n• Gracie 10:30–18:30\n\nMID\n• Rich 12:00–21:00\n\nCLOSING bar (start 14:00 or later)\n• Ben 15:00–22:00 (& – meaning not known yet)\n• Louis 16:30–22:00\n\nELSEWHERE IN THE BUILDING\nAdmin\n• Cath\nUsher\n• Lottie 11:45–23:00\nBox\n• Beth 11:30–21:00\n\nAdded by rota-calendar."
   },
   {
     "kind": "dayoff",
@@ -42,7 +42,7 @@
     "end": "2026-11-17T13:00:00",
     "colorId": "2",
     "location": "",
-    "description": "Day off. This isn't a shift and isn't counted in your hours.\n\nDM: Jack 08:30–16:30 → Cath 14:45–22:45\n\nOPENING bar (start 08:00–10:30)\n• Kieran 08:30–15:00\n• Giovine 10:15–15:00\n• Myles 10:30–18:00\n\nMID\n• Beth 12:00–20:30\n\nCLOSING bar (start 14:00 or later)\n• Ben 15:00–22:00 (& – meaning not known yet)\n• Louis 15:00–22:00\n\nELSEWHERE IN THE BUILDING\nAdmin\n• Cath no times printed\n• Rich no times printed\nUsher\n• Gracie 10:30–22:45\nBox\n• Louise 10:30–21:00\nBase\n• Ben 14:00–15:00 (then Bar 15:00–22:00)\n\nAdded by rota-calendar."
+    "description": "Day off. This isn't a shift and isn't counted in your hours.\n\nDM: Jack 08:30–16:30 → Cath 14:45–22:45\n\nOPENING bar (start 08:00–10:30)\n• Kieran 08:30–15:00\n• Giovine 10:15–15:00\n• Myles 10:30–18:00\n\nMID\n• Beth 12:00–20:30\n\nCLOSING bar (start 14:00 or later)\n• Ben 15:00–22:00 (& – meaning not known yet)\n• Louis 15:00–22:00\n\nELSEWHERE IN THE BUILDING\nAdmin\n• Cath\n• Rich\nUsher\n• Gracie 10:30–22:45\nBox\n• Louise 10:30–21:00\n\nAdded by rota-calendar."
   },
   {
     "kind": "shift",

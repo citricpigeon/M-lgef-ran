@@ -41,7 +41,7 @@ Write `weeks/<Friday YYYY-MM-DD>.json`:
 
 - **`team`** is everyone else in **Will's section** that day. That's normally Bar.
 - **`dm`** is that day's DM-section shifts.
-- **Days off:** for every day in the Fri–Thu week that Will isn't working, add an entry to `"days_off"` with that day's `dm`, the bar `team`, and every other section under `areas`, top to bottom as printed (Admin, Usher, Box, EEAAO, Base):
+- **Days off:** for every day in the Fri–Thu week that Will isn't working, add an entry to `"days_off"` with that day's `dm`, the bar `team`, and every other section under `areas`, top to bottom as printed (Admin, Usher, Box, EEAAO). **Leave out Base** for now: Will doesn't know what it is yet (`ignore_areas` in `config.json`). If someone's name is printed with no times (common on Admin), record just the name; the event shows the name alone, meaning they could be in at any time. Never add times that aren't printed:
 
   ```json
   "days_off": [
