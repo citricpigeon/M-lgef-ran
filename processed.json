@@ -6,6 +6,9 @@
     "seen-old": "an older rota, seen but not processed; past, so never calendared"
   },
   "files": [
+    {"id": "1RwfWLsLYCoTXil9tYGmRaBWaiAREdEAu", "title": "09eda247-4c9a-42a4-b748-f3f0fce6f30e.jpg", "week": "2026-11-20", "status": "calendared",
+     "events": {"2026-11-20": "uhgbth0fdbnkgn3916llh28sis", "2026-11-21": "t7pg6hljdldhu2ef4l5cjv5m8g", "2026-11-22": "mcnd2qhlhpfb0rvip1t41629m8", "2026-11-24-dayoff": "ufgpfg5g4vkngtj41t4qchma44", "2026-11-25": "sj3tp32prstii815jd7qputgmc", "2026-11-26": "vnh3ijbqrkfc2tv2rt9bcubmio"},
+     "note": "NOV 2026 printed, day numbers hand-corrected. Wed 25 read through glare; Will confirmed. Mon 23 day-off event HELD: Ben 08:30-16:30 DC+ on bar, only other Ben that day is Base 17:00-20:30; waiting on Will"},
     {"id": "1xj4_uhg1QDFjTVDyJTOK2nskdsF8TbhO", "title": "fc9344bb-1f7e-4927-a281-748fc0f7b920.jpg", "week": "2026-11-13", "status": "calendared",
      "events": {"2026-11-13": "1h75kft0neadh8r8sds9oi5ee4", "2026-11-14": "uqftuhjmbppe4pjtfeav05t1ag", "2026-11-15": "ubvc8srke9qsc38oa4mua7mang", "2026-11-18": "t03gbaev2437esgk81e1cv2ug8", "2026-11-19": "amci9ar7h9tuvjc9dpouoi2jj0", "2026-11-16-dayoff": "52j490t45ja8j2fqegtc5e6fic", "2026-11-17-dayoff": "062jjcau0516q1m5bhi96cods8"},
      "note": "NOV 2026 printed. Name printed as 'Will' (Fri/Sat/Wed/Thu) and 'William' (Sun); Will confirmed all five are his. Day-off events for Mon 16 and Tue 17 added on 17 Nov at Will's request (both already past)"},
